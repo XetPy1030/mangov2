@@ -1,1 +1,2 @@
-from . import *
+from .start import router
+from .test import router
