@@ -16,6 +16,7 @@ async def test(message: types.Message):
     print(message.text)
     print(message.photo)
     print(message.entities)
+    print(message.animation)
     await message.answer('test')
 
 
