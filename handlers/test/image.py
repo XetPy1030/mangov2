@@ -10,14 +10,14 @@ async def get_photo_id(message: types.Message):
     print(message.photo[-1].file_id)
 
 
-@router.message()
-async def test(message: types.Message):
-    print(dir(message))
-    print(message.text)
-    print(message.photo)
-    print(message.entities)
-    print(message.animation)
-    await message.answer('test')
+# @router.message()
+# async def test(message: types.Message):
+#     print(dir(message))
+#     print(message.text)
+#     print(message.photo)
+#     print(message.entities)
+#     print(message.animation)
+#     await message.answer('test')
 
 
 """
