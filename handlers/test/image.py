@@ -13,4 +13,12 @@ async def get_photo_id(message: types.Message):
 @router.message()
 async def test(message: types.Message):
     print(dir(message))
+    print(message.text)
+    print(message.photo)
+    print(message.entities)
     await message.answer('test')
+
+
+"""
+
+"""
