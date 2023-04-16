@@ -17,3 +17,5 @@ ADMIN_KEYBOARD = [
         buttons.ADMIN,
     ]
 ]
+
+REVIEWS_LINK = 'https://t.me/mango_agency_feedback'
