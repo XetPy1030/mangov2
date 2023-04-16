@@ -4,7 +4,7 @@ from core import dp, bot
 
 
 async def run_bot():
-    # from handlers import router
+    from handlers import router
 
     await dp.start_polling(bot)
 
