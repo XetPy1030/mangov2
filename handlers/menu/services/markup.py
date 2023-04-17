@@ -12,8 +12,8 @@ def get_markup_services(page: int = 0):
         )
 
     keyboard = [
-        [
-            *services_keyboard,
+        *[
+            [i] for i in services_keyboard
         ],
         [
             InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}'),
