@@ -35,6 +35,7 @@ async def cancel(message, state):
 
 @router.message(StateFilter(SupportOtvet.otvet))
 async def support_question_2(message: types.Message, state: FSMContext):
+    print(message.text)
     data = await state.update_data(user_id1=message.from_user.id)
     user_id = data.get('user_id')
 
