@@ -9,4 +9,5 @@ cancel_keyboard = ReplyKeyboardMarkup(
             KeyboardButton(text=lang.cancel.TO_THE_MAIN_MENU)
         ]
     ],
+    resize_keyboard=True
 )
