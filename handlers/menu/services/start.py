@@ -3,12 +3,17 @@ from aiogram.filters import Text
 from core import router
 from handlers.menu.services.markup import get_markup_services
 from info import lang
+from info import media
 from utils.filters.callback import CallbackFilter
 
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
 async def our_services(message):
-    await message.answer('Our services', reply_markup=get_markup_services())
+    await message.answer_photo(
+        media.OUR_SERVICES_PICTURE,
+        caption=lang.menu.services.OUR_SERVICES,
+        reply_markup=get_markup_services()
+    )
 
 
 @router.callback_query(CallbackFilter('services_prev'))
