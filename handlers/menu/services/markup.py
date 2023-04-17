@@ -15,7 +15,7 @@ def get_markup_services(page: int = 0):
     if page > 0:
         actions_keyboard.append(InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}'))
     else:
-        actions_keyboard.append(InlineKeyboardButton(text='Назад', callback_data='block'))
+        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
 
     actions_keyboard.append(InlineKeyboardButton(
         text=f'{page + 1}/{len(services) // PER_PAGE + 1 if len(services) % PER_PAGE else len(services) // PER_PAGE}', callback_data='block'))
@@ -23,7 +23,7 @@ def get_markup_services(page: int = 0):
     if (page + 1) * PER_PAGE < len(services):
         actions_keyboard.append(InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}'))
     else:
-        actions_keyboard.append(InlineKeyboardButton(text='Вперед', callback_data='block'))
+        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
 
     keyboard = [
         *[
