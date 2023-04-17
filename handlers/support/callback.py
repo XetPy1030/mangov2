@@ -12,7 +12,6 @@ from utils.filters.callback import CallbackFilter
 
 class SupportOtvet(StatesGroup):
     otvet = State()
-    user_id = State()
 
 
 @router.callback_query(CallbackFilter('answer'))
@@ -24,7 +23,7 @@ async def support_answer(callback_query: types.CallbackQuery, state: FSMContext)
 
     user_id = callback_query.data.split(':')[1]
     await state.set_state(SupportOtvet.otvet)
-    await state.update_data(user_id=user_id)
+    # await state.update_data(user_id=user_id)
 
 
 @router.message(Text(text=lang.cancel.TO_THE_MAIN_MENU, ignore_case=True))
