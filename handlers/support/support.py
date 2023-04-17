@@ -41,8 +41,6 @@ async def support_question(message: types.Message, state):
         reply_markup=get_menu_keyboard(message.from_user.id)
     )
 
-    print(SUPPORT_CHANNEL, message.chat.id)
-
     await bot.send_message(
         SUPPORT_CHANNEL,
         lang.menu.support.SUPPORT_ADMIN_NEW_QUESTION.format(
