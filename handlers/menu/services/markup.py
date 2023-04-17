@@ -29,7 +29,7 @@ def get_markup_services(page: int = 0):
             [i] for i in services_keyboard
         ],
         [
-            *actions_keyboard
+            actions_keyboard
         ]
     ]
 
