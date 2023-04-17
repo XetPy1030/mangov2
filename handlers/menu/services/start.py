@@ -21,3 +21,8 @@ async def services_prev(call):
 async def services_next(call):
     page = int(call.data.split(':')[1])
     await call.message.edit_reply_markup(reply_markup=get_markup_services(page + 1))
+
+
+@router.callback_query(CallbackFilter('block'))
+async def block(call):
+    await call.answer(lang.menu.services.SERVICES_BLOCK)
