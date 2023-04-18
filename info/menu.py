@@ -9,6 +9,9 @@ KEYBOARD = [
         buttons.REVIEWS,
         buttons.SUPPORT,
     ],
+    [
+        buttons.PROFILE,
+    ]
 ]
 
 ADMIN_KEYBOARD = [
