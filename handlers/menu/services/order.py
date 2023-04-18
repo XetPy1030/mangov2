@@ -28,4 +28,4 @@ async def order_service_handler(call):
         fullname=call.from_user.full_name,
         user_id=call.from_user.id,
         username=call.from_user.username
-    ), reply_markup=get_answer_keyboard(call.message.from_user.id))
+    ), reply_markup=get_answer_keyboard(call.from_user.id))
