@@ -11,6 +11,7 @@ from keyboards.menu import get_menu_keyboard
 
 @router.message(Command('start'))
 async def start(message: types.Message, state: FSMContext):
+    print(message.text)
     if not User.objects.filter(user_id=message.from_user.id).exists():
         if "ref-" in message.text:
             raise NotImplementedError
