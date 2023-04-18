@@ -7,7 +7,7 @@ from info import lang
 
 @router.message(Text(text=lang.menu.buttons.PROFILE, ignore_case=True))
 async def profile(message):
-    user = await User.objects.get(user_id=message.from_user.id)
+    user = User.objects.get(user_id=message.from_user.id)
     created_at = user.start_time.strftime('%d.%m.%Y')
     invited_users = await User.objects.filter(invited_by=message.from_user.id).count()
     invited_link = f'https://t.me/{bot.username}?start=ref-{message.from_user.id}'
