@@ -10,7 +10,7 @@ async def profile(message):
     user = User.objects.get(user_id=message.from_user.id)
     created_at = user.start_time.strftime('%d.%m.%Y')
     invited_users = User.objects.filter(from_user_id=message.from_user.id).count()
-    bot_username = (await bot.me).username
+    bot_username = (await bot.get_me()).username
     invited_link = f'https://t.me/{bot_username}?start=ref-{message.from_user.id}'
     is_invited = user.from_user_id is not None
     is_invited_text = lang.menu.profile.IS_INVITED if is_invited else lang.menu.profile.IS_NOT_INVITED
