@@ -1,4 +1,5 @@
-from core import router
+from config import REQUESTS_CHANNEL
+from core import router, bot
 from handlers.menu.services.markup import get_answer_keyboard
 from utils.filters.callback import CallbackFilter
 from info.services import services
@@ -22,7 +23,7 @@ async def order_service_handler(call):
         service_name=service.name
     ))
 
-    await call.message.answer(lang.menu.services.SERVICE_REQUEST_SENT_ADMIN.format(
+    await bot.send_message(REQUESTS_CHANNEL, lang.menu.services.SERVICE_REQUEST_SENT_ADMIN.format(
         service_name=service.name,
         fullname=call.from_user.full_name,
         user_id=call.from_user.id,
