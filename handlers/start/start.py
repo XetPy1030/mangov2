@@ -16,7 +16,7 @@ async def start(message: types.Message, state: FSMContext):
         if cmd.startswith('ref-'):
             user_id = int(cmd.removeprefix('ref-'))
             User.objects.create(user_id=message.from_user.id, from_user_id=user_id)
-            link_user = bot.get_chat(user_id)
+            link_user = await bot.get_chat(user_id)
             await message.answer(f'Вы пришли по реферальной ссылке от {link_user.full_name}')
         else:
             User.objects.create(user_id=message.from_user.id)
