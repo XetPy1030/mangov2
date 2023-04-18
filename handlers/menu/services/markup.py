@@ -35,3 +35,23 @@ def get_markup_services(page: int = 0):
     ]
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def get_order_service_keyboard(service_name: str):
+    keyboard = [
+        [
+            InlineKeyboardButton(text='✅ Заказать услугу', callback_data=f'order_service:{service_name}'),
+        ]
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def get_answer_keyboard(user_id: int):
+    keyboard = [
+        [
+            InlineKeyboardButton(text='Ответить', callback_data=f'answer:{user_id}'),
+        ]
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)

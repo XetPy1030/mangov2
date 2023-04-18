@@ -1,4 +1,5 @@
 from core import router
+from handlers.menu.services.markup import get_order_service_keyboard
 
 from info.services import services
 from utils.filters.callback import CallbackFilter
@@ -24,11 +25,12 @@ async def render_service(call, service):
     is_image = hasattr(service, 'image')
 
     text = render_text(service)
+    markup = render_markup(service)
 
     if is_image:
-        await call.message.answer_photo(service.image, caption=text)
+        await call.message.answer_photo(service.image, caption=text, reply_markup=markup)
     else:
-        await call.message.answer(text)
+        await call.message.answer(text, reply_markup=markup)
 
 
 def render_text(service):
@@ -48,3 +50,18 @@ def render_text(service):
         text += f'Бонус: {service.bonus}\n\n'
 
     return text
+
+
+def render_markup(service):
+    return get_order_service_keyboard(service.__class__.__name__)
+
+
+"""
+✅ Новая заявка
+
+Услуга: продвижение канала
+
+Заказчик: @XetPy
+
+ID: 886834522
+"""
