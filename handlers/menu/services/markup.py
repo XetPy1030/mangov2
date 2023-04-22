@@ -7,7 +7,7 @@ def get_categories():
     keyboard = []
     for category in services_with_categories.items():
         keyboard.append([
-            InlineKeyboardButton(text=category[1]['name'], callback_data=f'category:{category[1]}')
+            InlineKeyboardButton(text=category[1]['name'], callback_data=f'category:{category[0]}')
         ])
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
