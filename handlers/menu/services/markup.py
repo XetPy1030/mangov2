@@ -1,6 +1,16 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from info.services import services, PER_PAGE
+from info.services import services, PER_PAGE, services_with_categories
+
+
+def get_categories():
+    keyboard = []
+    for category in services_with_categories.items():
+        keyboard.append(
+            InlineKeyboardButton(text=category[1]['name'], callback_data=f'category:{category[1]}')
+        )
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
 def get_markup_services(page: int = 0):
@@ -18,7 +28,8 @@ def get_markup_services(page: int = 0):
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
 
     actions_keyboard.append(InlineKeyboardButton(
-        text=f'{page + 1}/{len(services) // PER_PAGE + 1 if len(services) % PER_PAGE else len(services) // PER_PAGE}', callback_data='block'))
+        text=f'{page + 1}/{len(services) // PER_PAGE + 1 if len(services) % PER_PAGE else len(services) // PER_PAGE}',
+        callback_data='block'))
 
     if (page + 1) * PER_PAGE < len(services):
         actions_keyboard.append(InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}'))

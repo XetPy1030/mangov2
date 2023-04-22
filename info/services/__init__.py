@@ -1,26 +1,63 @@
 from .services import *
 
-services = [
-    ChannelPackaging(),
-    ChannelPromotionAdBlogers(),
-    ChannelPromotionAd(),
-    Logo(),
-    Bot(),
-    ScreenwriterOnFunnel(),
-    Monetization(),
-    Consultation(),
-    ConsultationSeniorSpecialist(),
-    AdvertisingManager(),
-    Designer(),
-    ContentDeveloper(),
-    MontagerCreatorVideos(),
-    DevelopmentLandings(),
-    DevelopmentITPlatforms(),
-    AdvertisingCreative(),
-    ContentChannel(),
-    ChannelAdmin(),
-    LandingsInfoBuisness(),
-    UXUIDesign(),
-]
+services_with_categories = {
+    'telegram': {
+        'name': 'Телеграм-услуги',
+        'services': [
+            ChannelPackaging(),
+            ChannelPromotionAdBlogers(),
+            ChannelPromotionAd(),
+            Logo(),
+            Bot(),
+            AdvertisingCreative(),
+            ContentChannel(),
+            ChannelAdmin(),
+            ScreenwriterOnFunnel(),
+            Monetization(),
+            Consultation(),
+            ConsultationSeniorSpecialist(),
+        ],
+        'type': 'simple',
+    },
+    'youtube': {
+        'name': 'Youtube-услуги',
+        'services': [
+            AdvertisingManager(),
+            Designer(),
+            ContentDeveloper(),
+            MontagerCreatorVideos(),
+        ],
+        'type': 'simple',
+    },
+    'web': {
+        'name': 'Веб-услуги',
+        'services': [
+            DevelopmentLandings(),
+            DevelopmentITPlatforms(),
+            LandingsInfoBuisness(),
+            UXUIDesign(),
+        ],
+        'type': 'simple',
+    },
+    'insta': {
+        'name': 'Инстаграмм-услуги',
+        'services': [
+            TargetInsta(),
+            StoriesMakerInsta(),
+            VisualAssistantInsta(),
+            CopyWriterInsta(),
+            ScenaristInsta(),
+            RealsMaker()
+        ],
+        'type': 'simple'
+    }
+}
+
+
+services = {
+
+}
+
+
 
 PER_PAGE = 5

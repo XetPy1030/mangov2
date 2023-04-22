@@ -1,3 +1,8 @@
 class BaseService:
-    type: str
+    type = 'simple'
     name: str
+
+
+class BaseTariffs:
+    tariffs = []
+    type = 'with-tariffs'
