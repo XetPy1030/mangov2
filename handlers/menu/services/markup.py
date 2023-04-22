@@ -6,9 +6,9 @@ from info.services import services, PER_PAGE, services_with_categories
 def get_categories():
     keyboard = []
     for category in services_with_categories.items():
-        keyboard.append(
+        keyboard.append([
             InlineKeyboardButton(text=category[1]['name'], callback_data=f'category:{category[1]}')
-        )
+        ])
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
