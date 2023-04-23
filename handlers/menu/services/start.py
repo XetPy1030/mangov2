@@ -1,7 +1,7 @@
 from aiogram.filters import Text
 
 from core import router
-from handlers.menu.services.markup import get_markup_services, get_categories, get_markup_services_v2
+from handlers.menu.services.markup import get_markup_services_v2
 from info import lang
 from info import media
 from utils.filters.callback import CallbackFilter
@@ -26,6 +26,20 @@ async def services_prev(call):
 async def services_next(call):
     page = int(call.data.split(':')[1])
     await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page + 1))
+
+
+@router.callback_query(CallbackFilter('service_prev'))
+async def service_prev(call):
+    page = int(call.data.split(':')[1])
+    service_page = int(call.data.split(':')[2])
+    await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page, service_page - 1))
+
+
+@router.callback_query(CallbackFilter('service_next'))
+async def service_next(call):
+    page = int(call.data.split(':')[1])
+    service_page = int(call.data.split(':')[2])
+    await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page, service_page + 1))
 
 
 @router.callback_query(CallbackFilter('block'))
