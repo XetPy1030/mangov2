@@ -325,6 +325,9 @@ class TargetInsta(BaseTariffs):
         }
     }
 
+    name = 'Таргетинг'
+    type = 'tariff'
+
 
 class StoriesMakerInsta(BaseTariffs):
     class Daily(BaseService):
@@ -388,6 +391,9 @@ class StoriesMakerInsta(BaseTariffs):
         }
     }
 
+    name = 'Сторисмейкер'
+    type = 'tariff'
+
 
 class VisualAssistantInsta(BaseTariffs):
     class PieceByPiece(BaseService):
@@ -427,6 +433,9 @@ class VisualAssistantInsta(BaseTariffs):
             'service': Monthly
         }
     }
+
+    name = 'Визуальный ассистент'
+    type = 'tariff'
 
 
 class CopyWriterInsta(BaseTariffs):
@@ -470,6 +479,9 @@ class CopyWriterInsta(BaseTariffs):
             'service': Writing
         }
     }
+
+    name = 'Копирайтер'
+    type = 'tariff'
 
 
 class ScenaristInsta(BaseTariffs):
@@ -529,6 +541,9 @@ class ScenaristInsta(BaseTariffs):
         }
     }
 
+    name = 'Сценарист'
+    type = 'tariff'
+
 
 class RealsMaker(BaseTariffs):
     class PieceByPyPiece(BaseService):
@@ -560,3 +575,6 @@ class RealsMaker(BaseTariffs):
             'service': PieceByPyPiece
         }
     }
+
+    name = 'Рилсмейкер'
+    type = 'tariff'
