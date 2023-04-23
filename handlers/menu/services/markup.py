@@ -1,15 +1,23 @@
+from typing import List
+
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from info.services import services, PER_PAGE, services_with_categories, BaseService
 
 
-def get_markup_services_v2(page: int = 0):
+def split_list_into_chunks(lst: List, chunk_size: int):
+    return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
+
+
+def get_markup_services_v2(page: int = 0, service_page: int = 0):
     categories_keys = list(services_with_categories.keys())
     current_category_key = categories_keys[page]
     current_services = services_with_categories[current_category_key]['services']
+    service_chunks = split_list_into_chunks(current_services, 6)
+    current_service_chunk = service_chunks[service_page]
 
     keyboard = []
-    for service in current_services:
+    for service in current_service_chunk:
         keyboard.append([
             InlineKeyboardButton(
                 text=service.name,
@@ -19,7 +27,8 @@ def get_markup_services_v2(page: int = 0):
 
     actions_keyboard = []
     if page > 0:
-        actions_keyboard.append(InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}'))
+        actions_keyboard.append(
+            InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}:{service_page}'))
     else:
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
     actions_keyboard.append(InlineKeyboardButton(
@@ -27,11 +36,25 @@ def get_markup_services_v2(page: int = 0):
         callback_data='block'
     ))
     if page < len(services_with_categories) - 1:
-        actions_keyboard.append(InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}'))
+        actions_keyboard.append(
+            InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}:{service_page}'))
     else:
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
 
+    service_actions_keyboard = []
+    if service_page > 0:
+        service_actions_keyboard.append(
+            InlineKeyboardButton(text='⬆️', callback_data=f'service_prev:{page}:{service_page}'))
+    else:
+        service_actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    if service_page < len(service_chunks) - 1:
+        service_actions_keyboard.append(
+            InlineKeyboardButton(text='⬇️', callback_data=f'service_next:{page}:{service_page}'))
+    else:
+        service_actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+
     keyboard.append(actions_keyboard)
+    keyboard.append(service_actions_keyboard)
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
