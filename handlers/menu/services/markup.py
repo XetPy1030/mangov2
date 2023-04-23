@@ -47,6 +47,10 @@ def get_markup_services_v2(page: int = 0, service_page: int = 0):
             InlineKeyboardButton(text='⬆️', callback_data=f'service_prev:{page}:{service_page}'))
     else:
         service_actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    service_actions_keyboard.append(InlineKeyboardButton(
+        text=f'{service_page + 1}/{len(service_chunks)}',
+        callback_data='block'
+    ))
     if service_page < len(service_chunks) - 1:
         service_actions_keyboard.append(
             InlineKeyboardButton(text='⬇️', callback_data=f'service_next:{page}:{service_page}'))
