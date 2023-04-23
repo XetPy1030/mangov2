@@ -4,7 +4,8 @@ from info.services import services, PER_PAGE, services_with_categories, BaseServ
 
 
 def get_markup_services_v2(page: int = 0):
-    current_category_key = list(services_with_categories.keys())[page]
+    categories_keys = list(services_with_categories.keys())
+    current_category_key = categories_keys[page]
     current_services = services_with_categories[current_category_key]['services']
 
     keyboard = []
@@ -15,6 +16,20 @@ def get_markup_services_v2(page: int = 0):
                 callback_data=generate_callback_service(current_category_key, service)
             )
         ])
+
+    actions_keyboard = []
+    if page > 0:
+        actions_keyboard.append(InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}'))
+    else:
+        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    actions_keyboard.append(InlineKeyboardButton(
+        text=f'{page + 1}/{len(services_with_categories)}',
+        callback_data='block'
+    ))
+    if page < len(services_with_categories) - 1:
+        actions_keyboard.append(InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}'))
+    else:
+        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
