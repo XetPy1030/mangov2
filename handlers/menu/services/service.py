@@ -1,16 +1,22 @@
 from core import router
 from handlers.menu.services.markup import get_order_service_keyboard
 
-from info.services import services
+from info.services import services_with_categories
 from utils.filters.callback import CallbackFilter
 
 
 @router.callback_query(CallbackFilter('service'))
 async def service_handler(call):
-    name_service = call.data.split(':')[1]
+    info_split = call.data.split(':')
+    if len(info_split) != 3:
+        await call.answer('Error')
+        return
+    category_service = info_split[1]
+    name_service = info_split[2]
+
     service = None
-    for service_iter in services:
-        if service_iter.__class__.__name__ == name_service:
+    for service_iter in services_with_categories[category_service]['services']:
+        if service_iter.__class__.__name__.lower() == name_service:
             service = service_iter
             break
 
