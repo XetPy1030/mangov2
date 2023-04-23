@@ -16,16 +16,16 @@ async def our_services(message):
     )
 
 
-# @router.callback_query(CallbackFilter('services_prev'))
-# async def services_prev(call):
-#     page = int(call.data.split(':')[1])
-#     await call.message.edit_reply_markup(reply_markup=get_markup_services(page - 1))
-#
-#
-# @router.callback_query(CallbackFilter('services_next'))
-# async def services_next(call):
-#     page = int(call.data.split(':')[1])
-#     await call.message.edit_reply_markup(reply_markup=get_markup_services(page + 1))
+@router.callback_query(CallbackFilter('services_prev'))
+async def services_prev(call):
+    page = int(call.data.split(':')[1])
+    await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page - 1))
+
+
+@router.callback_query(CallbackFilter('services_next'))
+async def services_next(call):
+    page = int(call.data.split(':')[1])
+    await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page + 1))
 
 
 @router.callback_query(CallbackFilter('block'))
