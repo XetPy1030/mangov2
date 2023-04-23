@@ -11,7 +11,7 @@ def get_markup_services_v2(page: int = 0):
     for service in current_services:
         keyboard.append([
             InlineKeyboardButton(
-                text=service['name'],
+                text=service.name,
                 callback_data=generate_callback_service(current_category_key, service)
             )
         ])
