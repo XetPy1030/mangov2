@@ -4,7 +4,7 @@ from info.services import services, PER_PAGE, services_with_categories, BaseServ
 
 
 def get_markup_services_v2(page: int = 0):
-    current_category_key = services_with_categories.keys()[page]
+    current_category_key = list(services_with_categories.keys())[page]
     current_services = services_with_categories[current_category_key]['services']
 
     keyboard = []
