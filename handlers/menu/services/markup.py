@@ -1,6 +1,26 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from info.services import services, PER_PAGE, services_with_categories
+from info.services import services, PER_PAGE, services_with_categories, BaseService
+
+
+def get_markup_services_v2(page: int = 0):
+    current_category_key = services_with_categories.keys()[page]
+    current_services = services_with_categories[current_category_key]['services']
+
+    keyboard = []
+    for service in current_services:
+        keyboard.append([
+            InlineKeyboardButton(
+                text=service['name'],
+                callback_data=generate_callback_service(current_category_key, service)
+            )
+        ])
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def generate_callback_service(category_key, service: BaseService):
+    return f'service:{category_key}:{service.__class__.__name__}'.lower()
 
 
 def get_categories():
