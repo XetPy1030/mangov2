@@ -31,6 +31,8 @@ def get_markup_services_v2(page: int = 0):
     else:
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
 
+    keyboard.append(actions_keyboard)
+
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
