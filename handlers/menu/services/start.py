@@ -1,4 +1,5 @@
 from aiogram.filters import Text
+from aiogram.types import Message
 
 from core import router
 from handlers.menu.services.markup import get_markup_services_v2, get_category_name
@@ -8,7 +9,7 @@ from utils.filters.callback import CallbackFilter
 
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
-async def our_services(message):
+async def our_services(message: Message):
     await message.answer_photo(
         media.OUR_SERVICES_PICTURE,
         caption=lang.menu.services.OUR_SERVICES.format(
@@ -32,10 +33,12 @@ async def services_prev(call):
 @router.callback_query(CallbackFilter('services_next'))
 async def services_next(call):
     page = int(call.data.split(':')[1])
+    text = lang.menu.services.OUR_SERVICES.format(
+        category_name=get_category_name(page + 1)
+    )
+    print(text, call.message.text)
     await call.message.edit_text(
-        text=lang.menu.services.OUR_SERVICES.format(
-            category_name=get_category_name(page + 1)
-        )
+        text=text
     )
     await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page + 1))
 
