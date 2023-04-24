@@ -38,7 +38,7 @@ async def services_next(call):
     )
     print(text, call.message.text)
     await call.message.edit_text(
-        text=text
+        text
     )
     await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page + 1))
 
