@@ -25,8 +25,7 @@ async def services_prev(call):
     text = lang.menu.services.OUR_SERVICES.format(
         category_name=get_category_name(page - 1)
     )
-    await call.message.edit_caption(text)
-    await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page - 1))
+    await call.message.edit_caption(text, reply_markup=get_markup_services_v2(page - 1))
 
 
 @router.callback_query(CallbackFilter('services_next'))
@@ -35,8 +34,7 @@ async def services_next(call):
     text = lang.menu.services.OUR_SERVICES.format(
         category_name=get_category_name(page + 1)
     )
-    await call.message.edit_caption(text)
-    await call.message.edit_reply_markup(reply_markup=get_markup_services_v2(page + 1))
+    await call.message.edit_caption(text, reply_markup=get_markup_services_v2(page + 1))
 
 
 @router.callback_query(CallbackFilter('service_prev'))
