@@ -472,10 +472,9 @@ class CopyWriterInsta(BaseTariffs):
 - Помощь в формировании ToV (языка целевой аудитории)
 - Регулярное сопровождение в течение месяца
 """
-        price = {
-            '1-9': '8$/ пост',
-            '10+': '6$/ пост'
-        }
+        price = """до 10 постов - 8$/ каждый пост
+
+от 10 постов - 6$/каждый пост"""
         image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
 
     class Writing(BaseService):
@@ -487,10 +486,8 @@ class CopyWriterInsta(BaseTariffs):
 - Формирование ToV (языка целевой аудитории)
 - Регулярное сопровождение в течение месяца
 """
-        price = {
-            '1-9': '12$/ пост',
-            '10+': '8$/ пост'
-        }
+        price = """до 10 постов - 12$/шт
+от 10 постов - 8$/ шт"""
         image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
 
     tariffs = {
