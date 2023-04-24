@@ -4,6 +4,8 @@ from aiogram.fsm.context import FSMContext
 
 from core import router, bot
 from database import User
+from handlers.menu.services.markup import get_markup_services_v2
+from info import media, lang
 from info.lang.start import START_MESSAGE
 from keyboards.menu import get_menu_keyboard
 
@@ -27,7 +29,8 @@ async def start(message: types.Message, state: FSMContext):
     #     caption=START_MESSAGE,
     #     reply_markup=get_menu_keyboard(message.from_user.id)
     # )
-    await message.answer(
-        text=START_MESSAGE,
-        reply_markup=get_menu_keyboard(message.from_user.id)
+    await message.answer_photo(
+        media.OUR_SERVICES_PICTURE,
+        caption=lang.menu.services.OUR_SERVICES,
+        reply_markup=get_markup_services_v2()
     )
