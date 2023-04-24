@@ -63,6 +63,12 @@ def get_markup_services_v2(page: int = 0, service_page: int = 0):
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
+def get_category_name(page: int):
+    categories_keys = list(services_with_categories.keys())
+    current_category_key = categories_keys[page]
+    return services_with_categories[current_category_key]['name']
+
+
 def get_markup_group_tariff(service: BaseTariffs, category_name: str):
     keyboard = []
     for tariff in service.tariffs.items():
