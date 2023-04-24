@@ -23,10 +23,10 @@ async def service_handler(call):
                     break
             case 'tariff':
                 print(name_service)
-                for tariff in service_iter.tariffs:
-                    print(service_iter.__class__.__name__.lower() + '_' + tariff['service'].__class__.__name__.lower())
-                    if service_iter.__class__.__name__.lower() + '_' + tariff['service'].__class__.__name__.lower() == name_service:
-                        service = tariff
+                for tariff in service_iter.tariffs.items():
+                    print(service_iter.__class__.__name__.lower() + '_' + tariff[0])
+                    if service_iter.__class__.__name__.lower() + '_' + tariff[0] == name_service:
+                        service = tariff[1]['service']
                         break
                 if service_iter.__class__.__name__.lower() == name_service:
                     return await render_group_tariff(call, service_iter, category_service)
