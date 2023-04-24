@@ -16,7 +16,7 @@ async def service_handler(call):
 
     service = None
     for service_iter in services_with_categories[category_service]['services']:
-        match service_iter['type']:
+        match service_iter.type:
             case 'simple':
                 if service_iter.__class__.__name__.lower() == name_service:
                     service = service_iter
