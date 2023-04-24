@@ -13,6 +13,7 @@ async def service_handler(call):
         return
     category_service = info_split[1]
     name_service = info_split[2]
+    print(name_service)
 
     service = None
     for service_iter in services_with_categories[category_service]['services']:
@@ -22,9 +23,7 @@ async def service_handler(call):
                     service = service_iter
                     break
             case 'tariff':
-                print(name_service)
                 for tariff in service_iter.tariffs.items():
-                    print(service_iter.__class__.__name__.lower() + '_' + tariff[0])
                     if service_iter.__class__.__name__.lower() + '_' + tariff[0] == name_service:
                         service = tariff[1]['service']
                         break
