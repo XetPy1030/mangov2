@@ -21,19 +21,19 @@ async def about_us(message: Message):
     await message.answer_photo(
         photo=ABOUT_SERVICE_PICTURE,
         caption=ABOUT_1,
-        reply_markup=ReplyKeyboardRemove()
+        # reply_markup=ReplyKeyboardRemove()
     )
 
-    await sleep(3)
-
-    await message.answer(
-        text=ABOUT_2
-    )
-
-    await sleep(3)
-
-    await message.answer_photo(
-        photo=ABOUT_SERVICE_2_PICTURE,
-        caption=ABOUT_3,
-        reply_markup=get_menu_keyboard(message.from_user.id)
-    )
+    # await sleep(3)
+    #
+    # await message.answer(
+    #     text=ABOUT_2
+    # )
+    #
+    # await sleep(3)
+    #
+    # await message.answer_photo(
+    #     photo=ABOUT_SERVICE_2_PICTURE,
+    #     caption=ABOUT_3,
+    #     reply_markup=get_menu_keyboard(message.from_user.id)
+    # )

@@ -17,6 +17,7 @@ class ChannelPackaging(BaseService):
     """
     price = "35.000 ₽"
     bonus = "Поможем подобрать продающее название для вашего канала."
+    image = 'AgACAgIAAxkBAAICQGRGRhRzPcBy67v94o_SNct-ReI8AAJ0xDEbRLo4SlmsD48QJEe8AQADAgADeQADLwQ'
 
 
 class ChannelPromotionAdBlogers(BaseService):
@@ -34,9 +35,9 @@ class ChannelPromotionAdBlogers(BaseService):
 """
     price = """5.000 ₽ / неделя
 
-+
 
 12% от рекламного бюджета. """
+    image = 'AgACAgIAAxkBAAICN2RGRZ8myg0qa116fUqhXrEnCrlkAAJwxDEbRLo4Sri7pWw8eFk1AQADAgADeQADLwQ'
 
 
 class ChannelPromotionAd(BaseService):
@@ -54,9 +55,9 @@ class ChannelPromotionAd(BaseService):
 ЭТО ОФИЦИАЛЬНАЯ РЕКЛАМА ОТ ТЕЛЕГРАМ."""
     price = """От 4.050 € (рекламный бюджет) 
 
-+
 
 150 $ / неделя"""
+    image = 'AgACAgIAAxkBAAICLmRGRP2xhkQND7eUXdxOkGtraOaZAAJnxDEbRLo4SiwAAZtmAAF8FdUBAAMCAAN5AAMvBA'
 
 
 class Logo(BaseService):
@@ -69,6 +70,7 @@ class Logo(BaseService):
 -Дизайнер предоставляет 2 -3 варианта по вашему ТЗ.
 -Эффектный логотип привлечёт внимание Ваших подписчиков и выделит вас в телеграм-ленте среди тысячи других каналов."""
     price = 'от 2.500 ₽'
+    image = 'AgACAgIAAxkBAAICNWRGRYjAbOnzTrhn9bPER8x83zcZAAJvxDEbRLo4SnvLYNW3w6B0AQADAgADeQADLwQ'
 
 
 class Bot(BaseService):
@@ -89,6 +91,7 @@ class Bot(BaseService):
 - почти любые ваши "хотелки"."""
     price = 'от 10.000 ₽'
     bonus = 'Помогаем составить ТЗ для бота.'
+    image = 'AgACAgIAAxkBAAICOmRGRcUOG7cKHYrh26KG-1s6mt26AAJxxDEbRLo4Sr5PBgXxlZOBAQADAgADeQADLwQ'
 
 
 class AdvertisingCreative(BaseService):
@@ -103,6 +106,7 @@ class AdvertisingCreative(BaseService):
 
 3 поста - 4.500 ₽"""
     bonus = "Каждый 6-ой пост - Бесплатно!"
+    image = 'AgACAgIAAxkBAAICPGRGReSU_SPvCWH5W0k_BD-3yrauAAJyxDEbRLo4Suws8JMeqOCuAQADAgADeQADLwQ'
 
 
 class ContentChannel(BaseService):
@@ -113,6 +117,7 @@ class ContentChannel(BaseService):
 Составит Контент - план на срок от недели до месяца, опираясь на аналитику канала.
 """
     price = "от 6.000 ₽ / неделя"
+    image = 'AgACAgIAAxkBAAICM2RGRVNuvlT_4ZwRCSmpE2HpQV7hAAJtxDEbRLo4Sr37IShingTpAQADAgADeQADLwQ'
 
 
 class ChannelAdmin(BaseService):
@@ -126,6 +131,7 @@ class ChannelAdmin(BaseService):
 
 Взаимодействует в комментариях с аудиторией. """
     price = "от 4.000 ₽ / неделя"
+    image = 'AgACAgIAAxkBAAICMGRGRRz4agi6SDND9h6HVn-NX_u5AAJsxDEbRLo4Sr7i6MxjYK4BAQADAgADeQADLwQ'
 
 
 class ScreenwriterOnFunnel(BaseService):
@@ -145,6 +151,7 @@ class ScreenwriterOnFunnel(BaseService):
 900 $ 
 """
     bonus = 'Поможем подобрать продающее название для вашего канала.'
+    image = 'AgACAgIAAxkBAAICPmRGRf2n0JBqdFX-kUlB6TWOHc_FAAJzxDEbRLo4Sr5GYOlCMMMWAQADAgADeQADLwQ'
 
 
 class Monetization(BaseService):
@@ -159,6 +166,7 @@ class Monetization(BaseService):
 """
     price = '1500 $ (делаем все за вас)'
     bonus = '5 созвонов + поддержка в чате + консультация'
+    image = 'AgACAgIAAxkBAAICYWRGTU1pDPyj8uKgqAJIEjxB787EAAKfxDEbRLo4SnskZebBbDZdAQADAgADeQADLwQ'
 
 
 class Consultation(BaseService):
@@ -168,12 +176,14 @@ class Consultation(BaseService):
     description = """Отвечаем на все вопросы, связанные с монетизацией, продвижением канала и развитию 
     телеграм-проекта (вопросы должны быть подготовлены заранее)"""
     price = 'от 40 $ за час'
+    image = 'AgACAgIAAxkBAAICX2RGTTW2rhys-Cc1rviDSriESj0oAAKdxDEbRLo4SmaNe5n0c4M2AQADAgADeQADLwQ'
 
 
 class ConsultationSeniorSpecialist(Consultation):
     type = 'simple'
     name = 'Консультация со старшим специалистом'
     price = 'от 100 $ за час'
+    image = 'AgACAgIAAxkBAAICX2RGTTW2rhys-Cc1rviDSriESj0oAAKdxDEbRLo4SmaNe5n0c4M2AQADAgADeQADLwQ'
 
 
 class AdvertisingManager(BaseService):
@@ -189,6 +199,7 @@ class AdvertisingManager(BaseService):
 - Сделаем анализ результатов рекламных интеграций.
 - Переработка рекламной стратегии."""
     price = 'от 300$ в неделю'
+    image = 'AgACAgIAAxkBAAICUmRGS_sVMNkI_vte8y22hOrxTUMNAAKRxDEbRLo4Slyohk72l5CzAQADAgADeQADLwQ'
 
 
 class Designer(BaseService):
@@ -202,6 +213,7 @@ class Designer(BaseService):
 - 2 правки
 """
     price = 'от 15$'
+    image = 'AgACAgIAAxkBAAICUGRGS-M2SJspeZZ9nwwHUcBBeapKAAKNxDEbRLo4SgAB2IKv9kYZGAEAAwIAA3kAAy8E'
 
 
 class ContentDeveloper(BaseService):
@@ -231,6 +243,7 @@ class MontagerCreatorVideos(BaseService):
 - от 25$
 - от 20$
 - от 45$"""
+    image = 'AgACAgIAAxkBAAICTGRGRrptAzI7aDe5iVrSPelM2lfSAAJ5xDEbRLo4Sp5bXEvTQlOlAQADAgADeQADLwQ'
 
 
 class DevelopmentLandings(BaseService):
@@ -248,6 +261,7 @@ class DevelopmentLandings(BaseService):
 - дизайн, 
 - верстка на Тильде, 
 - подключение к приемщикам данных и CRM."""
+    image = 'AgACAgIAAxkBAAICSWRGRqDcmMMTPwi29MjdoDDk-QomAAJ4xDEbRLo4Svy7R8Bh-qdxAQADAgADeQADLwQ'
 
 
 class DevelopmentITPlatforms(BaseService):
@@ -260,6 +274,7 @@ class DevelopmentITPlatforms(BaseService):
 - backend, 
 - тестирование, 
 - запуск"""
+    image = 'AgACAgIAAxkBAAICQmRGRjAlvIt7zPe2wCPLhRBcCBq3AAJ1xDEbRLo4SmlED4qDA0ryAQADAgADeQADLwQ'
 
 
 class LandingsInfoBuisness(BaseService):
@@ -270,11 +285,13 @@ class LandingsInfoBuisness(BaseService):
 - Создание продающих страниц по вашему тексту и структуре.
 - Дизайн
 - Верстка """
+    image = 'AgACAgIAAxkBAAICR2RGRmJ3p5Gp0IlABokxnbL2fLQhAAJ3xDEbRLo4Slh7fx4pDunSAQADAgADeQADLwQ'
 
 
 class UXUIDesign(BaseService):
     type = 'simple'
     name = 'UX/UI дизайн'
+    image = 'AgACAgIAAxkBAAICRWRGRlS7ja3gkaWFu9-5LH2P3Yb_AAJ2xDEbRLo4SgP6tWaEpDpoAQADAgADeQADLwQ'
 
 
 class TargetInsta(BaseTariffs):
@@ -342,6 +359,7 @@ class StoriesMakerInsta(BaseTariffs):
 - 10-15 оформленных историй
 - Несколько вовлекающих историй"""
         price = '28$ сутки'
+        image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
     class Weekly(BaseService):
         type = 'simple'
@@ -358,6 +376,7 @@ class StoriesMakerInsta(BaseTariffs):
 - Анализ реакций аудитории
 - 20% вовлекающих историй"""
         price = '75$ неделя'
+        image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
     class Monthly(BaseService):
         type = 'simple'
@@ -375,6 +394,7 @@ class StoriesMakerInsta(BaseTariffs):
 - 40% вовлекающих историй
 - Регулярная генерация нового контента"""
         price = '700$ месяц'
+        image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
     tariffs = {
         'daily': {
@@ -405,6 +425,7 @@ class VisualAssistantInsta(BaseTariffs):
 - Подбор уникального шрифта
 """
         price = '10$/ шт'
+        image = 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E'
 
     class Monthly(BaseService):
         type = 'simple'
@@ -422,6 +443,7 @@ class VisualAssistantInsta(BaseTariffs):
 - Подбор шрифта
 """
         price = '260$'
+        image = 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E'
 
     tariffs = {
         'piece_b_p': {
@@ -454,6 +476,7 @@ class CopyWriterInsta(BaseTariffs):
             '1-9': '8$/ пост',
             '10+': '6$/ пост'
         }
+        image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
 
     class Writing(BaseService):
         type = 'simple'
@@ -468,6 +491,7 @@ class CopyWriterInsta(BaseTariffs):
             '1-9': '12$/ пост',
             '10+': '8$/ пост'
         }
+        image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
 
     tariffs = {
         'editing': {
@@ -496,6 +520,7 @@ class ScenaristInsta(BaseTariffs):
 - 30%-40% вовлекающих историй
 """
         price = '40$'
+        image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
     class Weekly(BaseService):
         type = 'simple'
@@ -509,6 +534,7 @@ class ScenaristInsta(BaseTariffs):
 - ""вписывание"" прогрева в текущие истории
 """
         price = '250$/ неделя'
+        image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
     class Monthly(BaseService):
         type = 'simple'
@@ -525,6 +551,7 @@ class ScenaristInsta(BaseTariffs):
 - Смена стратегии в течении месяца
 """
         price = '900$/ месяц'
+        image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
     tariffs = {
         'one_time': {

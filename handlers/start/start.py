@@ -23,8 +23,12 @@ async def start(message: types.Message, state: FSMContext):
 
     await state.clear()
 
-    await message.answer_animation(
-        animation=START_GIF_ANIMATION,
-        caption=START_MESSAGE,
+    # await message.answer_animation(
+    #     animation=START_GIF_ANIMATION,
+    #     caption=START_MESSAGE,
+    #     reply_markup=get_menu_keyboard(message.from_user.id)
+    # )
+    await message.answer(
+        text=START_MESSAGE,
         reply_markup=get_menu_keyboard(message.from_user.id)
     )
