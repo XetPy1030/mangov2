@@ -4,7 +4,6 @@ from aiogram.fsm.context import FSMContext
 
 from core import router, bot
 from database import User
-from info.media import START_GIF_ANIMATION
 from info.lang.start import START_MESSAGE
 from keyboards.menu import get_menu_keyboard
 
