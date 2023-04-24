@@ -27,7 +27,7 @@ async def service_handler(call):
                         service = tariff
                         break
                 if service_iter.__class__.__name__.lower() == name_service:
-                    return await render_group_tariff(call, service_iter)
+                    return await render_group_tariff(call, service_iter, category_service)
 
     if not service:
         await call.answer('Service not found')
@@ -36,11 +36,10 @@ async def service_handler(call):
     await render_service(call, service)
 
 
-def render_group_tariff(call, service):
+def render_group_tariff(call, service, category_name):
     markup = get_markup_group_tariff(
-        category_name=service.__class__.__name__.lower(),
-        tariffs=service.tariffs,
-        service=service
+        service=service,
+        category_name=category_name
     )
     text = f'<b>{service.name}</b>\n\n'
     return call.message.answer(text, reply_markup=markup)

@@ -2,7 +2,7 @@ from typing import List
 
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from info.services import services, PER_PAGE, services_with_categories, BaseService
+from info.services import services, PER_PAGE, services_with_categories, BaseService, BaseTariffs
 
 
 def split_list_into_chunks(lst: List, chunk_size: int):
@@ -63,12 +63,13 @@ def get_markup_services_v2(page: int = 0, service_page: int = 0):
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-def get_markup_group_tariff(category_name: str, tariffs: dict, service: BaseService):
+def get_markup_group_tariff(service: BaseTariffs, category_name: str):
     keyboard = []
-    for tariff in tariffs.keys():
-        callback = f'service:{category_name}:{service.__class__.__name__}_{tariffs[tariff]["service"].__class__.__name__.lower()}'
+    for tariff in service.tariffs:
+        name = ...
+        callback = f'service:{category_name}:{service.__class__.__name__}_{service.tariffs[tariff]["service"].__class__.__name__.lower()}'
         keyboard.append([
-            InlineKeyboardButton(text=tariffs[tariff]['name'], callback_data=callback)
+            InlineKeyboardButton(text=name, callback_data=callback)
         ])
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
