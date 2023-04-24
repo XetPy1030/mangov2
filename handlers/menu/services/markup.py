@@ -63,6 +63,16 @@ def get_markup_services_v2(page: int = 0, service_page: int = 0):
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
+def get_markup_group_tariff(tariffs: dict):
+    keyboard = []
+    for tariff in tariffs.keys():
+        keyboard.append([
+            InlineKeyboardButton(text=tariffs[tariff]['name'], callback_data=f'tariff:{tariff}')
+        ])
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
 def generate_callback_service(category_key, service: BaseService):
     return f'service:{category_key}:{service.__class__.__name__}'.lower()
 

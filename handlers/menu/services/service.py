@@ -1,5 +1,5 @@
 from core import router
-from handlers.menu.services.markup import get_order_service_keyboard
+from handlers.menu.services.markup import get_order_service_keyboard, get_markup_group_tariff
 
 from info.services import services_with_categories
 from utils.filters.callback import CallbackFilter
@@ -16,15 +16,31 @@ async def service_handler(call):
 
     service = None
     for service_iter in services_with_categories[category_service]['services']:
-        if service_iter.__class__.__name__.lower() == name_service:
-            service = service_iter
-            break
+        match service_iter['type']:
+            case 'simple':
+                if service_iter.__class__.__name__.lower() == name_service:
+                    service = service_iter
+                    break
+            case 'tariff':
+                for tariff in service_iter.tariffs:
+                    if service_iter.__class__.__name__.lower() + '_' + tariff.__class__.__name__.lower() == name_service:
+                        service = tariff
+                        break
+                if service_iter.__class__.__name__.lower() == name_service:
+                    return await render_group_tariff(call, service_iter)
 
     if not service:
         await call.answer('Service not found')
         return
 
     await render_service(call, service)
+
+
+def render_group_tariff(call, service):
+    markup = get_markup_group_tariff(service.tariffs)
+    text = f'<b>{service.name}</b>\n\n'
+    return call.message.answer(text, reply_markup=markup)
+
 
 
 async def render_service(call, service):
