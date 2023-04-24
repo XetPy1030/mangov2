@@ -37,10 +37,12 @@ async def service_handler(call):
 
 
 def render_group_tariff(call, service):
-    markup = get_markup_group_tariff(service.tariffs)
+    markup = get_markup_group_tariff(
+        category_name=service.__class__.__name__.lower(),
+        tariffs=service.tariffs
+    )
     text = f'<b>{service.name}</b>\n\n'
     return call.message.answer(text, reply_markup=markup)
-
 
 
 async def render_service(call, service):
