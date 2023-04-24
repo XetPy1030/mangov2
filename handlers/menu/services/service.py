@@ -22,9 +22,9 @@ async def service_handler(call):
                     service = service_iter
                     break
             case 'tariff':
-                print(service_iter.__class__.__name__.lower() + '_' + tariff.__class__.__name__.lower())
                 print(name_service)
                 for tariff in service_iter.tariffs:
+                    print(service_iter.__class__.__name__.lower() + '_' + tariff.__class__.__name__.lower())
                     if service_iter.__class__.__name__.lower() + '_' + tariff.__class__.__name__.lower() == name_service:
                         service = tariff
                         break
