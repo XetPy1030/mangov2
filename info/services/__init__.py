@@ -55,11 +55,8 @@ services_with_categories = {
     }
 }
 
-
 services = {
 
 }
-
-
 
 PER_PAGE = 5

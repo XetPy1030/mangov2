@@ -473,6 +473,7 @@ class ContentManagerInsta(BaseTariffs):
             'service': Monthly
         }
     }
+    name = 'Контент-менеджер'
 
 
 class VisualAssistantInsta(BaseTariffs):
