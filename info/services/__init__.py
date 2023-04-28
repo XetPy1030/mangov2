@@ -52,6 +52,13 @@ services_with_categories = {
             RealsMaker(),
         ],
         'type': 'simple'
+    },
+    'other': {
+        'name': 'Другие услуги',
+        'services': [
+            ConsultationWithAgencyAdSpecialist(),
+            ConsultationWithAgencyOwner(),
+        ]
     }
 }
 
