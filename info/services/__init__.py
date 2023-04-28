@@ -44,6 +44,7 @@ services_with_categories = {
         'services': [
             TargetInsta(),
             StoriesMakerInsta(),
+            ContentManagerInsta(),
             VisualAssistantInsta(),
             CopyWriterInsta(),
             ScenaristInsta(),

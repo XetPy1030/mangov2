@@ -25,22 +25,17 @@ def get_markup_services_v2(page: int = 0, service_page: int = 0):
             )
         ])
 
-    actions_keyboard = []
-    if page > 0:
-        actions_keyboard.append(
-            InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}:{service_page}'))
-    else:
-        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
-    actions_keyboard.append(InlineKeyboardButton(
-        text=f'{page + 1}/{len(services_with_categories)}',
-        callback_data='block'
-    ))
-    if page < len(services_with_categories) - 1:
-        actions_keyboard.append(
-            InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}:{service_page}'))
-    else:
-        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    actions_keyboard = get_action_keyboard(page, service_page)
 
+    service_actions_keyboard = get_action_keyboard_change_service_page(page, service_chunks, service_page)
+
+    keyboard.append(actions_keyboard)
+    keyboard.append(service_actions_keyboard)
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def get_action_keyboard_change_service_page(page, service_chunks, service_page):
     service_actions_keyboard = []
     if service_page > 0:
         service_actions_keyboard.append(
@@ -56,11 +51,26 @@ def get_markup_services_v2(page: int = 0, service_page: int = 0):
             InlineKeyboardButton(text='⬇️', callback_data=f'service_next:{page}:{service_page}'))
     else:
         service_actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    return service_actions_keyboard
 
-    keyboard.append(actions_keyboard)
-    keyboard.append(service_actions_keyboard)
 
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+def get_action_keyboard(page, service_page):
+    actions_keyboard = []
+    if page > 0:
+        actions_keyboard.append(
+            InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}:{service_page}'))
+    else:
+        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    actions_keyboard.append(InlineKeyboardButton(
+        text=f'{page + 1}/{len(services_with_categories)}',
+        callback_data='block'
+    ))
+    if page < len(services_with_categories) - 1:
+        actions_keyboard.append(
+            InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}:{service_page}'))
+    else:
+        actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    return actions_keyboard
 
 
 def get_category_name(page: int):

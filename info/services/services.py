@@ -228,6 +228,7 @@ class ContentDeveloper(BaseService):
 -Контролировать внешний вид и структуру Youtube-канала.
 -Анализировать статистику."""
     price = '85.000'
+    image = 'AgACAgIAAxkBAAICtGRLYArGl04qiDNBel1XX0vHwVNYAAIpwjEb9f5ZSvyS5PkoCizcAQADAgADeQADLwQ'
 
 
 class MontagerCreatorVideos(BaseService):
@@ -310,6 +311,7 @@ class TargetInsta(BaseTariffs):
 - оптимизация креативов в течении 2ух недель 
 - составление рекламных слоганов"""
         price = '350$ + ваш бюджет на 2 недели'
+        image = 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E'
 
     class Full(BaseService):
         type = 'simple'
@@ -330,6 +332,7 @@ class TargetInsta(BaseTariffs):
         price = """600$ + Бюджет до 1500$
 
 Свыше 1500$ - 35% от бюджета"""
+        image = 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E'
 
     tariffs = {
         'base': {
@@ -413,6 +416,47 @@ class StoriesMakerInsta(BaseTariffs):
 
     name = 'Сторисмейкер'
     type = 'tariff'
+
+
+class ContentManagerInsta(BaseTariffs):
+    class Weekly(BaseService):
+        type = 'simple'
+        name = 'Контент-менеджер - недельно'
+        description = """ВХОДИТ:
+
+- Создание контент - плана в ленту
+- Создание рубрикатора в ленту и в Хайлайтс
+- Написание ТЗ для копирайтера/ сторисмейкера
+- Помощь в создании контента в ленту, в истории
+"""
+        price = '60$/ неделя'
+        image = 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ'
+
+    class Monthly(BaseService):
+        type = 'simple'
+        name = 'Контент-менеджер - месячно'
+        description = """ВХОДИТ:
+
+- Создание контент - плана в ленту на месяц
+- Создание рубрикатора в ленту и в Хайлайтс
+- Написание ТЗ для копирайтера/ сторисмейкера
+- Помощь в создании контента в ленту, в истории
+- Оптимизация контента на следующий месяц 
+- анализ данных 
+"""
+        price = '200$/ месяц'
+        image = 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ'
+
+    tariffs = {
+        'weekly': {
+            'name': 'недельно',
+            'service': Weekly
+        },
+        'monthly': {
+            'name': 'месячно',
+            'service': Monthly
+        }
+    }
 
 
 class VisualAssistantInsta(BaseTariffs):
@@ -592,6 +636,7 @@ class RealsMaker(BaseTariffs):
 от 5 до 10 - 35$/ шт
 
 от 10 до 20 - 30$/ шт"""
+        image = 'AgACAgIAAxkBAAICo2RGa33028HL2n9LENUQuzVvCL9IAALlyTEbdbwxSnVv0hwseDjgAQADAgADeQADLwQ'
 
     tariffs = {
         'piece_b_p': {
