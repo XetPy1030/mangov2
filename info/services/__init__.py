@@ -48,7 +48,8 @@ services_with_categories = {
             VisualAssistantInsta(),
             CopyWriterInsta(),
             ScenaristInsta(),
-            RealsMaker()
+            ContentCreatorInsta(),
+            RealsMaker(),
         ],
         'type': 'simple'
     }
