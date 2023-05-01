@@ -31,7 +31,7 @@ async def start(message: types.Message, state: FSMContext):
     # )
     await message.answer_photo(
         media.START_PICTURE,
-        caption=lang.menu.services.OUR_SERVICES.format(
+        caption=lang.start.START_MESSAGE.format(
             category_name=get_category_name(0)
         ),
         reply_markup=get_markup_services_v2()
