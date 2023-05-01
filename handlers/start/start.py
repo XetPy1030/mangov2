@@ -34,5 +34,5 @@ async def start(message: types.Message, state: FSMContext):
         caption=lang.start.START_MESSAGE.format(
             category_name=get_category_name(0)
         ),
-        reply_markup=get_markup_services_v2()
+        reply_markup=get_menu_keyboard(message.from_user)
     )
