@@ -145,6 +145,9 @@ def get_order_service_keyboard(service_name: str):
     keyboard = [
         [
             InlineKeyboardButton(text='✅ Заказать услугу', callback_data=f'order_service:{service_name}'),
+        ],
+        [
+            InlineKeyboardButton(text='⬅️ Назад', callback_data='back_to_services'),
         ]
     ]
 
