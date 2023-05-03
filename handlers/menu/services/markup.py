@@ -32,9 +32,9 @@ def render_services_from_category(category_key: str, page: int = 0):
             )
         ])
 
-    actions_keyboard = get_action_keyboard(page, service_chunks)
+    # actions_keyboard = get_action_keyboard(page, service_chunks)
 
-    keyboard.append(actions_keyboard)
+    # keyboard.append(actions_keyboard)
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
