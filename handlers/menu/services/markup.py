@@ -157,13 +157,13 @@ def get_markup_services(page: int = 0):
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-def get_order_service_keyboard(service_name: str):
+def get_order_service_keyboard(service_name: str, category_name: str):
     keyboard = [
         [
             InlineKeyboardButton(text='✅ Заказать услугу', callback_data=f'order_service:{service_name}'),
         ],
         [
-            InlineKeyboardButton(text='⬅️ Назад', callback_data='back_to_services'),
+            InlineKeyboardButton(text='⬅️ Назад', callback_data=f'back_to_services:{category_name}'),
         ]
     ]
 

@@ -34,7 +34,7 @@ async def service_handler(call):
         await call.answer('Service not found')
         return
 
-    await render_service(call, service)
+    await render_service(call, service, category_service)
 
 
 def render_group_tariff(call, service, category_name):
@@ -46,11 +46,11 @@ def render_group_tariff(call, service, category_name):
     return call.message.answer(text, reply_markup=markup)
 
 
-async def render_service(call, service):
+async def render_service(call, service, category):
     is_image = hasattr(service, 'image')
 
     text = render_text(service)
-    markup = render_markup(service)
+    markup = render_markup(service, category)
 
     if is_image:
         await call.message.answer_photo(service.image, caption=text, reply_markup=markup)
@@ -77,8 +77,8 @@ def render_text(service):
     return text
 
 
-def render_markup(service):
-    return get_order_service_keyboard(service.__class__.__name__)
+def render_markup(service, category):
+    return get_order_service_keyboard(service.__class__.__name__, category)
 
 
 """
