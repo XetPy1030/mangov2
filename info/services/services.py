@@ -472,6 +472,7 @@ class ContentManagerInsta(BaseTariffs):
         }
     }
     name = 'Контент-менеджер'
+    type = 'tariff'
 
 
 class VisualAssistantInsta(BaseTariffs):
