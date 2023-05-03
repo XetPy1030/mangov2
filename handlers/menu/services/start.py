@@ -2,8 +2,7 @@ from aiogram.filters import Text
 from aiogram.types import Message
 
 from core import router
-from handlers.menu.services.markup import get_category_name, \
-    render_categories, render_services_from_category
+from handlers.menu.services.markup import render_categories, render_services_from_category
 from info import lang
 from info import media
 from utils.filters.callback import CallbackFilter
