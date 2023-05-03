@@ -15,7 +15,7 @@ class ChannelPackaging(BaseService):
 -Рекламный креатив для дальнейшего продвижения канала.
 -Консультация телеграм-специалиста (40 минут): советы по монетизации, продвижению, рекомендации по контенту.
     """
-    price = "35.000 ₽"
+    price = "470 $"
     bonus = "Поможем подобрать продающее название для вашего канала."
     image = 'AgACAgIAAxkBAAICQGRGRhRzPcBy67v94o_SNct-ReI8AAJ0xDEbRLo4SlmsD48QJEe8AQADAgADeQADLwQ'
 
@@ -33,10 +33,7 @@ class ChannelPromotionAdBlogers(BaseService):
 -Дальнейшая оптимизация рекламной кампании (при необходимости).
 
 """
-    price = """5.000 ₽ / неделя
-
-
-12% от рекламного бюджета. """
+    price = """70$/неделя + 12% от бюджета"""
     image = 'AgACAgIAAxkBAAICN2RGRZ8myg0qa116fUqhXrEnCrlkAAJwxDEbRLo4Sri7pWw8eFk1AQADAgADeQADLwQ'
 
 
@@ -69,7 +66,7 @@ class Logo(BaseService):
 -Уникальный логотип для Вашего канала.
 -Дизайнер предоставляет 2 -3 варианта по вашему ТЗ.
 -Эффектный логотип привлечёт внимание Ваших подписчиков и выделит вас в телеграм-ленте среди тысячи других каналов."""
-    price = 'от 2.500 ₽'
+    price = 'от 30$'
     image = 'AgACAgIAAxkBAAICNWRGRYjAbOnzTrhn9bPER8x83zcZAAJvxDEbRLo4SnvLYNW3w6B0AQADAgADeQADLwQ'
 
 
@@ -89,7 +86,7 @@ class Bot(BaseService):
 - блокировать спам;
 - разыгрывать конкурсы;
 - почти любые ваши "хотелки"."""
-    price = 'от 10.000 ₽'
+    price = 'от 135$'
     bonus = 'Помогаем составить ТЗ для бота.'
     image = 'AgACAgIAAxkBAAICOmRGRcUOG7cKHYrh26KG-1s6mt26AAJxxDEbRLo4Sr5PBgXxlZOBAQADAgADeQADLwQ'
 
@@ -102,9 +99,9 @@ class AdvertisingCreative(BaseService):
 Мы подготовим продающий рекламный пост для рекламы вашего проекта, \
 которые должны заинтересовать аудиторию и мотивировать подписаться на Ваш канал.
 """
-    price = """1 пост - 1.900 ₽
+    price = """1 пост - 25$
 
-3 поста - 4.500 ₽"""
+3 поста - 60$"""
     bonus = "Каждый 6-ой пост - Бесплатно!"
     image = 'AgACAgIAAxkBAAICPGRGReSU_SPvCWH5W0k_BD-3yrauAAJyxDEbRLo4Suws8JMeqOCuAQADAgADeQADLwQ'
 
@@ -116,7 +113,7 @@ class ContentChannel(BaseService):
 
 Составит Контент - план на срок от недели до месяца, опираясь на аналитику канала.
 """
-    price = "от 6.000 ₽ / неделя"
+    price = "60$"
     image = 'AgACAgIAAxkBAAICM2RGRVNuvlT_4ZwRCSmpE2HpQV7hAAJtxDEbRLo4Sr37IShingTpAQADAgADeQADLwQ'
 
 
@@ -130,7 +127,7 @@ class ChannelAdmin(BaseService):
 Подберет ресурсы с контентом на вашу тематику для оптимизации контента на канале.
 
 Взаимодействует в комментариях с аудиторией. """
-    price = "от 4.000 ₽ / неделя"
+    price = "от 55 $ / неделя"
     image = 'AgACAgIAAxkBAAICMGRGRRz4agi6SDND9h6HVn-NX_u5AAJsxDEbRLo4Sr7i6MxjYK4BAQADAgADeQADLwQ'
 
 
