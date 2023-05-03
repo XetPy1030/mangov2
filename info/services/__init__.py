@@ -2,7 +2,7 @@ from .services import *
 
 services_with_categories = {
     'telegram': {
-        'name': 'Телеграм-услуги',
+        'name': 'Телеграм',
         'services': [
             ChannelPackaging(),
             ChannelPromotionAdBlogers(),
@@ -20,7 +20,7 @@ services_with_categories = {
         'type': 'simple',
     },
     'youtube': {
-        'name': 'Youtube-услуги',
+        'name': 'Youtube',
         'services': [
             AdvertisingManager(),
             Designer(),
@@ -30,7 +30,7 @@ services_with_categories = {
         'type': 'simple',
     },
     'web': {
-        'name': 'Веб-услуги',
+        'name': 'Веб',
         'services': [
             DevelopmentLandings(),
             DevelopmentITPlatforms(),
@@ -40,7 +40,7 @@ services_with_categories = {
         'type': 'simple',
     },
     'insta': {
-        'name': 'Инстаграм-услуги',
+        'name': 'Инстаграм',
         'services': [
             TargetInsta(),
             StoriesMakerInsta(),
@@ -54,7 +54,7 @@ services_with_categories = {
         'type': 'simple'
     },
     'other': {
-        'name': 'Другие услуги',
+        'name': 'Другое',
         'services': [
             ConsultationWithAgencyAdSpecialist(),
             ConsultationWithAgencyOwner(),
