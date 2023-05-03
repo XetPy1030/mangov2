@@ -429,6 +429,7 @@ class ContentCreatorInsta(BaseService):
 4. Подбор и оптимизация хэштегов.
 5. Размещение текстовых публикаций на странице Instagram.
 6. Отслеживание реакций аудитории и корректирование контента при необходимости."""
+    photo = 'AgACAgIAAxkBAAIDl2RSL6uuJ9WVDkVArlVE-KKCyaTHAALWxzEbGXeQSmnMQlOf2TLxAQADAgADeQADLwQ'
 
 
 class ContentManagerInsta(BaseTariffs):
@@ -685,3 +686,4 @@ class ConsultationWithAgencyAdSpecialist(BaseService):
 Консультация со специалистом может быть полезна для различных компаний, от стартапов до крупных предприятий, которые хотят увеличить свою видимость в социальных сетях и привлечь больше клиентов. 
 
 Основная цель консультации - помочь вам разработать эффективный план рекламных действий, который позволит увеличить доходы вашего проекта или бизнеса и привлечь больше клиентов."""
+    photo = 'AgACAgIAAxkBAAIDp2RSL_Y3fkU2krWtLTe2H2SFYIEVAALXxzEbGXeQSuVC9uzNb8I8AQADAgADeQADLwQ'
