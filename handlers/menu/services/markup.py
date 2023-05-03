@@ -31,41 +31,15 @@ def render_services_from_category(category_key: str, page: int = 0):
             )
         ])
 
-    # actions_keyboard = get_action_keyboard(page, service_chunks)
+    actions_keyboard = get_action_keyboard(page, service_chunks, category_key)
 
-    # keyboard.append(actions_keyboard)
+    keyboard.append(actions_keyboard)
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
 def split_list_into_chunks(lst: List, chunk_size: int):
     return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
-
-
-def get_markup_services_v2(page: int = 0, service_page: int = 0):
-    categories_keys = list(services_with_categories.keys())
-    current_category_key = categories_keys[page]
-    current_services = services_with_categories[current_category_key]['services']
-    service_chunks = split_list_into_chunks(current_services, 6)
-    current_service_chunk = service_chunks[service_page]
-
-    keyboard = []
-    for service in current_service_chunk:
-        keyboard.append([
-            InlineKeyboardButton(
-                text=service.name,
-                callback_data=generate_callback_service(current_category_key, service)
-            )
-        ])
-
-    actions_keyboard = get_action_keyboard(page, service_page)
-
-    service_actions_keyboard = get_action_keyboard_change_service_page(page, service_chunks, service_page)
-
-    keyboard.append(actions_keyboard)
-    keyboard.append(service_actions_keyboard)
-
-    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
 def get_action_keyboard_change_service_page(page, service_chunks, service_page):
@@ -87,20 +61,22 @@ def get_action_keyboard_change_service_page(page, service_chunks, service_page):
     return service_actions_keyboard
 
 
-def get_action_keyboard(page, service_page):
+def get_action_keyboard(page, service_chunks, category_key):
+
+    # Назад, Меню, Вперед
     actions_keyboard = []
     if page > 0:
         actions_keyboard.append(
-            InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{page}:{service_page}'))
+            InlineKeyboardButton(text='Назад', callback_data=f'services_prev:{category_key}:{page}'))
     else:
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
     actions_keyboard.append(InlineKeyboardButton(
-        text=f'{page + 1}/{len(services_with_categories)}',
+        text=f'{page + 1}/{len(service_chunks)}',
         callback_data='block'
     ))
     if page < len(services_with_categories) - 1:
         actions_keyboard.append(
-            InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{page}:{service_page}'))
+            InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{category_key}:{page}'))
     else:
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
     return actions_keyboard
