@@ -1,9 +1,8 @@
 SERVICES_BLOCK = 'Вы не можете перейти на эту страницу'
 
 OUR_SERVICES = """
-Добро пожаловать в Digital - агенство «BB$ : Brain & Best solution»
+Добро пожаловать в Digital - агенство «BB$: Brain & Best solution»
 
-Выбрана категория <b>{category_name}</b> 📝
 <I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>
 """
 

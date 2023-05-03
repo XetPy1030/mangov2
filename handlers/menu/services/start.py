@@ -2,7 +2,7 @@ from aiogram.filters import Text
 from aiogram.types import Message
 
 from core import router
-from handlers.menu.services.markup import get_markup_services_v2, get_category_name
+from handlers.menu.services.markup import get_markup_services_v2, get_category_name, render_categories
 from info import lang
 from info import media
 from utils.filters.callback import CallbackFilter
@@ -12,10 +12,8 @@ from utils.filters.callback import CallbackFilter
 async def our_services(message: Message):
     await message.answer_photo(
         media.OUR_SERVICES_PICTURE,
-        caption=lang.menu.services.OUR_SERVICES.format(
-            category_name=get_category_name(0)
-        ),
-        reply_markup=get_markup_services_v2()
+        caption=lang.menu.services.OUR_SERVICES,
+        reply_markup=render_categories()
     )
 
 

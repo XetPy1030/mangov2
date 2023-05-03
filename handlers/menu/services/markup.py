@@ -5,6 +5,18 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from info.services import services, PER_PAGE, services_with_categories, BaseService, BaseTariffs
 
 
+def render_categories():
+    keyboard = []
+    for category in services_with_categories.items():
+        keyboard.append([
+            InlineKeyboardButton(
+                text=category[1]['name'],
+                callback_data=f'services:{category[0]}:0'
+            )
+        ])
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
 def split_list_into_chunks(lst: List, chunk_size: int):
     return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
 
