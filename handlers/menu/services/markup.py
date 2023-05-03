@@ -32,8 +32,10 @@ def render_services_from_category(category_key: str, page: int = 0):
         ])
 
     actions_keyboard = get_action_keyboard(page, service_chunks, category_key)
+    actions_keyboard_back = get_action_keyboard_back()
 
     keyboard.append(actions_keyboard)
+    keyboard.append(actions_keyboard_back)
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
@@ -62,8 +64,6 @@ def get_action_keyboard_change_service_page(page, service_chunks, service_page):
 
 
 def get_action_keyboard(page, service_chunks, category_key):
-
-    # Назад, Меню, Вперед
     actions_keyboard = []
     if page > 0:
         actions_keyboard.append(
@@ -79,6 +79,13 @@ def get_action_keyboard(page, service_chunks, category_key):
             InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{category_key}:{page}'))
     else:
         actions_keyboard.append(InlineKeyboardButton(text='ㅤ', callback_data='block'))
+    return actions_keyboard
+
+
+def get_action_keyboard_back():
+    actions_keyboard = [InlineKeyboardButton(text='ㅤ', callback_data='block'),
+                        InlineKeyboardButton(text='Назад', callback_data=f'back'),
+                        InlineKeyboardButton(text='ㅤ', callback_data='block')]
     return actions_keyboard
 
 
