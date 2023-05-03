@@ -38,12 +38,20 @@ async def back_to_categories(call):
     )
 
 
-# @router.callback_query(CallbackFilter('back_to_services'))
-# async def back_to_services(call):
-#     await call.message.answer_photo(
-#         media.OUR_SERVICES_PICTURE,
-#         caption=lang.menu.services.OUR_SERVICES.format(
-#             category_name=get_category_name(0)
-#         ),
-#         reply_markup=()
-#     )
+@router.callback_query(CallbackFilter('services_prev'))
+async def services_prev(call):
+    category_name = call.data.split(':')[1]
+    page = int(call.data.split(':')[2])
+    await call.message.edit_reply_markup(
+        reply_markup=render_services_from_category(category_name, page - 1)
+    )
+
+
+@router.callback_query(CallbackFilter('services_next'))
+async def services_next(call):
+    category_name = call.data.split(':')[1]
+    page = int(call.data.split(':')[2])
+    await call.message.edit_reply_markup(
+        reply_markup=render_services_from_category(category_name, page + 1)
+    )
+
