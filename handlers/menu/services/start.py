@@ -31,6 +31,13 @@ async def block(call):
     await call.answer(lang.menu.services.SERVICES_BLOCK)
 
 
+@router.callback_query(CallbackFilter('back_to_categories'))
+async def back_to_categories(call):
+    await call.message.edit_reply_markup(
+        reply_markup=render_categories()
+    )
+
+
 # @router.callback_query(CallbackFilter('back_to_services'))
 # async def back_to_services(call):
 #     await call.message.answer_photo(

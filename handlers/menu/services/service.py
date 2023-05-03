@@ -13,7 +13,6 @@ async def service_handler(call):
         return
     category_service = info_split[1]
     name_service = info_split[2]
-    print(name_service)
 
     service = None
     for service_iter in services_with_categories[category_service]['services']:

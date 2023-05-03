@@ -84,7 +84,7 @@ def get_action_keyboard(page, service_chunks, category_key):
 
 def get_action_keyboard_back():
     actions_keyboard = [InlineKeyboardButton(text='ㅤ', callback_data='block'),
-                        InlineKeyboardButton(text='Назад', callback_data=f'back'),
+                        InlineKeyboardButton(text='Назад', callback_data=f'back_to_categories'),
                         InlineKeyboardButton(text='ㅤ', callback_data='block')]
     return actions_keyboard
 
