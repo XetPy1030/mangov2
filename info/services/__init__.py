@@ -8,10 +8,12 @@ services_with_categories = {
             ChannelPromotionAdBlogers(),
             ChannelPromotionAd(),
             Logo(),
+
             Bot(),
             AdvertisingCreative(),
             ContentChannel(),
             ChannelAdmin(),
+
             ScreenwriterOnFunnel(),
             Monetization(),
             Consultation(),
@@ -46,6 +48,7 @@ services_with_categories = {
             StoriesMakerInsta(),
             ContentManagerInsta(),
             VisualAssistantInsta(),
+
             CopyWriterInsta(),
             ScenaristInsta(),
             ContentCreatorInsta(),

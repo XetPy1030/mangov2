@@ -19,7 +19,7 @@ def render_categories():
 
 def render_services_from_category(category_key: str, page: int = 0):
     current_services = services_with_categories[category_key]['services']
-    per_page = 6
+    per_page = 4
     service_chunks = split_list_into_chunks(current_services, per_page)
     current_service_chunk = service_chunks[page]
 
