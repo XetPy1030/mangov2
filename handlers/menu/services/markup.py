@@ -27,7 +27,7 @@ def render_services_from_category(category_key: str, page: int = 0):
         keyboard.append([
             InlineKeyboardButton(
                 text=service.name,
-                callback_data=f'service:{service.__class__.__name__.lower()}'
+                callback_data=f'service:{category_key}:{service.__class__.__name__.lower()}'
             )
         ])
 
