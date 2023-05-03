@@ -22,10 +22,7 @@ async def our_services(message: Message):
 async def category_handler(call):
     category_name = call.data.split(':')[1]
     page = int(call.data.split(':')[2])
-    await call.message.answer_photo(
-        media.OUR_SERVICES_PICTURE,
-        reply_markup=render_services_from_category(category_name, page)
-    )
+    await call.message.edit_reply_markup(render_services_from_category(category_name, page))
 
 
 @router.callback_query(CallbackFilter('block'))
