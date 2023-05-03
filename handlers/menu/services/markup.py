@@ -11,9 +11,30 @@ def render_categories():
         keyboard.append([
             InlineKeyboardButton(
                 text=category[1]['name'],
-                callback_data=f'services:{category[0]}:0'
+                callback_data=f'category:{category[0]}:0'
             )
         ])
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def render_services_from_category(category_key: str, page: int = 0):
+    current_services = services_with_categories[category_key]['services']
+    service_chunks = split_list_into_chunks(current_services, 6)
+    current_service_chunk = service_chunks[page]
+
+    keyboard = []
+    for service in current_service_chunk:
+        keyboard.append([
+            InlineKeyboardButton(
+                text=service.name,
+                callback_data=f'service:{service.id}'
+            )
+        ])
+
+    actions_keyboard = get_action_keyboard(page, service_chunks)
+
+    keyboard.append(actions_keyboard)
+
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
