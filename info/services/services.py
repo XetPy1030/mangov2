@@ -22,7 +22,7 @@ class ChannelPackaging(BaseService):
 
 class ChannelPromotionAdBlogers(BaseService):
     type = 'simple'
-    name = 'Продвижение канала в Телеграме(телеграм-блогеры)'
+    name = 'Продвижение канала (блогеры)'
     time = 'от 3 дней'
     description = """ВХОДИТ:
 
@@ -42,7 +42,7 @@ class ChannelPromotionAdBlogers(BaseService):
 
 class ChannelPromotionAd(BaseService):
     type = 'simple'
-    name = 'Продвижение канала в Телеграме(телеграм-реклама)'
+    name = 'Продвижение канала (ТГ - реклама)'
     time = 'от 7 дней'
     description = """ВХОДИТ:
 
