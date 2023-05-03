@@ -40,7 +40,7 @@ services_with_categories = {
         'type': 'simple',
     },
     'insta': {
-        'name': 'Инстаграмм-услуги',
+        'name': 'Инстаграм-услуги',
         'services': [
             TargetInsta(),
             StoriesMakerInsta(),
