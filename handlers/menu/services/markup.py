@@ -74,7 +74,7 @@ def get_action_keyboard(page, service_chunks, category_key):
         text=f'{page + 1}/{len(service_chunks)}',
         callback_data='block'
     ))
-    if page < len(services_with_categories) - 1:
+    if page < len(service_chunks) - 1:
         actions_keyboard.append(
             InlineKeyboardButton(text='Вперед', callback_data=f'services_next:{category_key}:{page}'))
     else:
