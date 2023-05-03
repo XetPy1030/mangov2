@@ -23,7 +23,7 @@ def render_services_from_category(category_key: str, page: int = 0):
     current_service_chunk = service_chunks[page]
 
     keyboard = []
-    for service in current_service_chunk:
+    for service in current_service_chunk[:1]:
         print(
             service.__class__.__name__.lower(),
             service.name
