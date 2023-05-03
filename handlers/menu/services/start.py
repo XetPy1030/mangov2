@@ -2,10 +2,10 @@ from aiogram.filters import Text
 from aiogram.types import Message
 
 from core import router
+from handlers.menu.services.markup import render_categories, render_services_from_category
 from info import lang
 from info import media
 from utils.filters.callback import CallbackFilter
-from handlers.menu.services.markup import render_categories, render_services_from_category
 
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
