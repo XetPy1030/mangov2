@@ -32,12 +32,12 @@ async def block(call):
     await call.answer(lang.menu.services.SERVICES_BLOCK)
 
 
-@router.callback_query(CallbackFilter('back_to_services'))
-async def back_to_services(call):
-    await call.message.answer_photo(
-        media.OUR_SERVICES_PICTURE,
-        caption=lang.menu.services.OUR_SERVICES.format(
-            category_name=get_category_name(0)
-        ),
-        reply_markup=get_markup_services_v2()
-    )
+# @router.callback_query(CallbackFilter('back_to_services'))
+# async def back_to_services(call):
+#     await call.message.answer_photo(
+#         media.OUR_SERVICES_PICTURE,
+#         caption=lang.menu.services.OUR_SERVICES.format(
+#             category_name=get_category_name(0)
+#         ),
+#         reply_markup=()
+#     )
