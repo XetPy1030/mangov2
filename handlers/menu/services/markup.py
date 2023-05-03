@@ -24,7 +24,10 @@ def render_services_from_category(category_key: str, page: int = 0):
 
     keyboard = []
     for service in current_service_chunk:
-        print(service)
+        print(
+            service.__class__.__name__.lower(),
+            service.name
+        )
         keyboard.append([
             InlineKeyboardButton(
                 text=service.name,
