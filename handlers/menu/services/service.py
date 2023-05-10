@@ -43,7 +43,7 @@ def render_group_tariff(call, service, category_name):
         category_name=category_name
     )
     text = f"""
-Вы выбрали услугу <b>{service.name}</b>
+Вы выбрали услугу <b>{service.name}</b>\n
 Выберите тариф:
     """
     return call.message.answer(text, reply_markup=markup)
