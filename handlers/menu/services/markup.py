@@ -115,7 +115,7 @@ def get_markup_group_tariff(service: BaseTariffs, category_name: str):
         ])
 
     keyboard.append([
-        InlineKeyboardButton(text='Назад', callback_data=f'back_to_services:{category_name}')
+        InlineKeyboardButton(text='Назад', callback_data=f'back_to_category:{category_name}')
     ])
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
