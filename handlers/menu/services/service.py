@@ -8,7 +8,6 @@ from utils.filters.callback import CallbackFilter
 @router.callback_query(CallbackFilter('service'))
 async def service_handler(call):
     info_split = call.data.split(':')
-    print(call.data)
     if len(info_split) != 3:
         await call.answer('Error')
         return
