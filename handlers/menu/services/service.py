@@ -50,7 +50,7 @@ async def render_service(call, service, category):
     is_image = hasattr(service, 'image')
 
     text = render_text(service)
-    markup = render_markup(service, category)
+    markup = render_markup(service, category, call)
 
     if is_image:
         await call.message.answer_photo(service.image, caption=text, reply_markup=markup)
@@ -77,8 +77,8 @@ def render_text(service):
     return text
 
 
-def render_markup(service, category):
-    return get_order_service_keyboard(service.__class__.__name__, category)
+def render_markup(service, category, call):
+    return get_order_service_keyboard(service.__class__.__name__, category, call, service)
 
 
 """

@@ -50,10 +50,9 @@ class ChannelPromotionAd(BaseService):
 -Регулярная оптимизация рекламной кампании (при необходимости).
 
 ЭТО ОФИЦИАЛЬНАЯ РЕКЛАМА ОТ ТЕЛЕГРАМ."""
-    price = """От 4.050 € (рекламный бюджет) 
+    price = """150$/неделя (работа таргетолога) 
 
-
-150 $ / неделя"""
+От 400$/ месяц (работа таргетолога)"""
     image = 'AgACAgIAAxkBAAICLmRGRP2xhkQND7eUXdxOkGtraOaZAAJnxDEbRLo4SiwAAZtmAAF8FdUBAAMCAAN5AAMvBA'
 
 
@@ -113,7 +112,7 @@ class ContentChannel(BaseService):
 
 Составит Контент - план на срок от недели до месяца, опираясь на аналитику канала.
 """
-    price = "60$"
+    price = "от 60$/неделя"
     image = 'AgACAgIAAxkBAAICM2RGRVNuvlT_4ZwRCSmpE2HpQV7hAAJtxDEbRLo4Sr37IShingTpAQADAgADeQADLwQ'
 
 
@@ -137,16 +136,14 @@ class ScreenwriterOnFunnel(BaseService):
     time = 'от 3 дней'
     description = """ВХОДИТ:
 
--Разработка воронки
--Разработка воронки с ботом
--Воронка под ключ
+— 3 Консультации по вашему проекту, на которых мы разберем ваш продукт, раскроем вашу личность и упакуем ваш продукт если он не упакован 
+— Составим индивидуальную воронку продаж. Проанализируем вашу целевую аудиторию, изучим ее боли и как их можно решить и составим подробный план контента, который будет публиковаться на канале для прогревов.
+— Самостоятельно напишем для вашего канала прогревочные посты. Прогрев будет идти от 3 до 14 дней, в зависимости от лояльности и вовлеченности вашей аудитории. 
+— Создание бота, в котором будет собираться заинтересованные потенциальные клиенты
+— Создание допольнительные триггеров и дожимов для людей, которые еще хотят купить продукт 
+— Полное сопровождение и ответы на ваши вопросы в письменном формате
 """
-    price = """150 $ 
-
-450 $ 
-
-900 $ 
-"""
+    price = """600$ + 25% от прибыли"""
     bonus = 'Поможем подобрать продающее название для вашего канала.'
     image = 'AgACAgIAAxkBAAICPmRGRf2n0JBqdFX-kUlB6TWOHc_FAAJzxDEbRLo4Sr5GYOlCMMMWAQADAgADeQADLwQ'
 
@@ -161,7 +158,9 @@ class Monetization(BaseService):
 -Подборка реферальных программ
 -Помощь запуска закрытого канала
 """
-    price = '1500 $ (делаем все за вас)'
+    price = """от 1500$
+
+Время от 7 дней, без 30"""
     bonus = '5 созвонов + поддержка в чате + консультация'
     image = 'AgACAgIAAxkBAAICYWRGTU1pDPyj8uKgqAJIEjxB787EAAKfxDEbRLo4SnskZebBbDZdAQADAgADeQADLwQ'
 
@@ -172,7 +171,7 @@ class Consultation(BaseService):
     time = 'от 1 часа'
     description = """Отвечаем на все вопросы, связанные с монетизацией, продвижением канала и развитию 
     телеграм-проекта (вопросы должны быть подготовлены заранее)"""
-    price = 'от 40 $ за час'
+    price = 'от 40$/час'
     image = 'AgACAgIAAxkBAAICX2RGTTW2rhys-Cc1rviDSriESj0oAAKdxDEbRLo4SmaNe5n0c4M2AQADAgADeQADLwQ'
 
 
@@ -195,7 +194,7 @@ class AdvertisingManager(BaseService):
 - Проконтролируем рекламную кампанию. 
 - Сделаем анализ результатов рекламных интеграций.
 - Переработка рекламной стратегии."""
-    price = 'от 300$ в неделю'
+    price = 'от 300$/неделя'
     image = 'AgACAgIAAxkBAAICUmRGS_sVMNkI_vte8y22hOrxTUMNAAKRxDEbRLo4Slyohk72l5CzAQADAgADeQADLwQ'
 
 
@@ -205,10 +204,11 @@ class Designer(BaseService):
     time = 'от 2 дней'
     description = """ВХОДИТ:
 
--Дизайн превью (обложек) выпусков.
--Дизайн шапки YouTube канала.
-- 2 правки
-"""
+- Разработка логотипа канала
+- Создание заглавной картинки для канала
+- Дизайн обложки для видео
+- Создание иконок для социальных сетей канала
+- Разработка титульных кадров и заслонок для видео"""
     price = 'от 15$'
     image = 'AgACAgIAAxkBAAICUGRGS-M2SJspeZZ9nwwHUcBBeapKAAKNxDEbRLo4SgAB2IKv9kYZGAEAAwIAA3kAAy8E'
 
@@ -224,7 +224,7 @@ class ContentDeveloper(BaseService):
 -Писать сценарии к видео.
 -Контролировать внешний вид и структуру Youtube-канала.
 -Анализировать статистику."""
-    price = '85.000'
+    price = '1100$'
     image = 'AgACAgIAAxkBAAICtGRLYArGl04qiDNBel1XX0vHwVNYAAIpwjEb9f5ZSvyS5PkoCizcAQADAgADeQADLwQ'
 
 
@@ -236,11 +236,9 @@ class MontagerCreatorVideos(BaseService):
 - Написание текста, сценария 
 - Изучение темы. Поиск/создание материала , инфографики, анимаций
 - Начитка 
-- Монтаж """
-    price = """- от 25$
-- от 25$
-- от 20$
-- от 45$"""
+- Монтаж
+- Консультация"""
+    price = """от 25$"""
     image = 'AgACAgIAAxkBAAICTGRGRrptAzI7aDe5iVrSPelM2lfSAAJ5xDEbRLo4Sp5bXEvTQlOlAQADAgADeQADLwQ'
 
 
@@ -358,7 +356,7 @@ class StoriesMakerInsta(BaseTariffs):
 - Оформим истории на сутки в индивидуальном стиле
 - 10-15 оформленных историй
 - Несколько вовлекающих историй"""
-        price = '28$ сутки'
+        price = '28$'
         image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
     class Weekly(BaseService):
@@ -375,7 +373,7 @@ class StoriesMakerInsta(BaseTariffs):
 - 8-10 оформленных историй в сутки 3 раза в неделю
 - Анализ реакций аудитории
 - 20% вовлекающих историй"""
-        price = '75$ неделя'
+        price = '75$'
         image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
     class Monthly(BaseService):
@@ -393,7 +391,7 @@ class StoriesMakerInsta(BaseTariffs):
 - Анализ реакций аудитории
 - 40% вовлекающих историй
 - Регулярная генерация нового контента"""
-        price = '700$ месяц'
+        price = '700$'
         image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
     tariffs = {
@@ -426,7 +424,8 @@ class ContentCreatorInsta(BaseService):
 4. Подбор и оптимизация хэштегов.
 5. Размещение текстовых публикаций на странице Instagram.
 6. Отслеживание реакций аудитории и корректирование контента при необходимости."""
-    photo = 'AgACAgIAAxkBAAIDl2RSL6uuJ9WVDkVArlVE-KKCyaTHAALWxzEbGXeQSmnMQlOf2TLxAQADAgADeQADLwQ'
+    price = 'от 50$/неделя'
+    image = 'AgACAgIAAxkBAAIDl2RSL6uuJ9WVDkVArlVE-KKCyaTHAALWxzEbGXeQSmnMQlOf2TLxAQADAgADeQADLwQ'
 
 
 class ContentManagerInsta(BaseTariffs):
@@ -475,7 +474,7 @@ class ContentManagerInsta(BaseTariffs):
 class VisualAssistantInsta(BaseTariffs):
     class PieceByPiece(BaseService):
         type = 'simple'
-        name = 'Визуальный ассистент - штучно'
+        name = 'Штучно'
         description = """ВХОДИТ:
 
 - оформление картинки на 1 пост в ленту в уникальном стиле и в заданной цветовой гамме
@@ -486,7 +485,7 @@ class VisualAssistantInsta(BaseTariffs):
 
     class Monthly(BaseService):
         type = 'simple'
-        name = 'Визуальный ассистент - месячно'
+        name = 'Месячно'
         description = """ВХОДИТ:
 
 - Компановка ленты из ваших фотографий
@@ -565,12 +564,12 @@ class CopyWriterInsta(BaseTariffs):
 class ScenaristInsta(BaseTariffs):
     class OneTime(BaseService):
         type = 'simple'
-        name = 'Сценарист - разово'
+        name = 'Сценарист'
         time = '3-5 дней'
         description = """ВХОДИТ:
 
 - написание продающего сценария на 1 день
-- 8-10 историй с ""прогревающим"" контентом, направленным на продажу продукта
+- 8-10 историй с «прогревающим» контентом, направленным на продажу продукта
 - 30%-40% вовлекающих историй
 """
         price = '40$'
@@ -578,28 +577,28 @@ class ScenaristInsta(BaseTariffs):
 
     class Weekly(BaseService):
         type = 'simple'
-        name = 'Сценарист - недельно'
+        name = 'Сценарист'
         time = '5-8 дней'
         description = """ВХОДИТ:
 
 - написание продающего сценария на 7 дней
-- 8-10 историй с ""прогревающим"" контентом, направленным на продажу продукта/ прогреву к вебинару/ марфону и тд/  каждый день 
+- 8-10 историй с «прогревающим» контентом, направленным на продажу продукта/ прогреву к вебинару/ марфону и тд/  каждый день 
 - 20%-40% вовлекающих историй
-- ""вписывание"" прогрева в текущие истории
+- «вписывание» прогрева в текущие истории
 """
         price = '250$/ неделя'
         image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
     class Monthly(BaseService):
         type = 'simple'
-        name = 'Сценарист - месячно'
+        name = 'Сценарист'
         time = '10-15 дней'
         description = """ВХОДИТ:
 
 - написание продающего сценария на месяц
 - 8-10 историй с ""прогревающим"" контентом, направленным на продажу продукта/ прогреву к вебинару/ марфону и тд/ 
 - 40% вовлекающих историй
-- ""вписывание"" прогрева в текущие истории
+- «вписывание» прогрева в текущие истории
 - Постоянная поддержка в течении прогрева
 - Смена триггеров в течении месяца при необходимости
 - Смена стратегии в течении месяца
@@ -626,12 +625,11 @@ class ScenaristInsta(BaseTariffs):
     type = 'tariff'
 
 
-class RealsMaker(BaseTariffs):
-    class PieceByPyPiece(BaseService):
-        type = 'simple'
-        name = 'Рилсмейкер - штучно'
-        time = 'от 2ух дней'
-        description = """ВХОДИТ:
+class RealsMaker(BaseService):
+    type = 'simple'
+    name = 'Рилсмейкер'
+    time = 'от 2ух дней'
+    description = """ВХОДИТ:
 
 - напишем сценарий для рилсов
 - подберем актуальную музыку
@@ -644,22 +642,48 @@ class RealsMaker(BaseTariffs):
 - Создание Контент - плана
 - Подберем хештеги
 """
-        price = """до 5 шт - 40$/ шт 
+    price = """до 5 шт - 40$/ шт 
 
 от 5 до 10 - 35$/ шт
 
 от 10 до 20 - 30$/ шт"""
-        image = 'AgACAgIAAxkBAAICo2RGa33028HL2n9LENUQuzVvCL9IAALlyTEbdbwxSnVv0hwseDjgAQADAgADeQADLwQ'
+    image = 'AgACAgIAAxkBAAICo2RGa33028HL2n9LENUQuzVvCL9IAALlyTEbdbwxSnVv0hwseDjgAQADAgADeQADLwQ'
 
-    tariffs = {
-        'piece_b_p': {
-            'name': 'штучно',
-            'service': PieceByPyPiece
-        }
-    }
 
-    name = 'Рилсмейкер'
-    type = 'tariff'
+# class RealsMaker(BaseTariffs):
+#     class PieceByPyPiece(BaseService):
+#         type = 'simple'
+#         name = 'Рилсмейкер - штучно'
+#         time = 'от 2ух дней'
+#         description = """ВХОДИТ:
+#
+# - напишем сценарий для рилсов
+# - подберем актуальную музыку
+# - распишем действия по кадрово
+# - сделаем монтаж ролика
+# - напишем описание
+# - Подберем индивидуальный стиль
+# - сделаем обложку в едином стиле для каждого ролика
+# - Регулярная генерация идей для роликов
+# - Создание Контент - плана
+# - Подберем хештеги
+# """
+#         price = """до 5 шт - 40$/ шт
+#
+# от 5 до 10 - 35$/ шт
+#
+# от 10 до 20 - 30$/ шт"""
+#         image = 'AgACAgIAAxkBAAICo2RGa33028HL2n9LENUQuzVvCL9IAALlyTEbdbwxSnVv0hwseDjgAQADAgADeQADLwQ'
+#
+#     tariffs = {
+#         'piece_b_p': {
+#             'name': 'штучно',
+#             'service': PieceByPyPiece
+#         }
+#     }
+#
+#     name = 'Рилсмейкер'
+#     type = 'tariff'
 
 
 class ConsultationWithAgencyOwner(BaseService):
