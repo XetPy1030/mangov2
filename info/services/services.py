@@ -696,6 +696,7 @@ class ConsultationWithAgencyOwner(BaseService):
 Владелец агентства оценивает все аспекты уже существующего бизнеса или идеи и поможет определить, какие каналы маркетинга и рекламы лучше использовать для достижения целей компании.
 
 Основная цель консультации - помочь вам улучшить эффективность бизнеса и выйти на новый уровень развития."""
+    price = '350$'
 
 
 class ConsultationWithAgencyAdSpecialist(BaseService):
@@ -709,3 +710,4 @@ class ConsultationWithAgencyAdSpecialist(BaseService):
 
 Основная цель консультации - помочь вам разработать эффективный план рекламных действий, который позволит увеличить доходы вашего проекта или бизнеса и привлечь больше клиентов."""
     photo = 'AgACAgIAAxkBAAIDp2RSL_Y3fkU2krWtLTe2H2SFYIEVAALXxzEbGXeQSuVC9uzNb8I8AQADAgADeQADLwQ'
+    price = '350 $'
