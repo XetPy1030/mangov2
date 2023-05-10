@@ -167,6 +167,7 @@ def get_markup_services(page: int = 0):
 
 
 def get_order_service_keyboard(service_name: str, category_name: str, callback, service):
+    print('hu', service_name, category_name, callback.data, service)
     if '_' in service_name:
         back_button = InlineKeyboardButton(text='⬅️ Назад', callback_data=callback.data)
     else:
