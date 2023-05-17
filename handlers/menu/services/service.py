@@ -41,7 +41,7 @@ async def service_handler(call):
 
 def render_group_tariff(call, service, category_name):
     cat_page = get_page_from_service_name(category_name, service.__class__.__name__.lower())
-    print(cat_page)
+    print(cat_page, category_name, service.__class__.__name__.lower())
     markup = get_markup_group_tariff(
         service=service,
         category_name=category_name,
