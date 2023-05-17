@@ -58,10 +58,10 @@ async def services_next(call):
 
 @router.callback_query(CallbackFilter('back_to_category'))
 async def back_to_services(call):
-    category_name = call.data.split(':')[1]
+    _, category_name, category_page = call.data.split(':')
     await call.message.answer_photo(
         media.OUR_SERVICES_PICTURE,
         caption=lang.menu.services.OUR_SERVICES,
-        reply_markup=render_services_from_category(category_name, 0)
+        reply_markup=render_services_from_category(category_name, int(category_page))
     )
 
