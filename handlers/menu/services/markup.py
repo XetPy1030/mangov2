@@ -111,7 +111,7 @@ def get_category_name(page: int):
     return services_with_categories[current_category_key]['name']
 
 
-def get_markup_group_tariff(service: BaseTariffs, category_name: str):
+def get_markup_group_tariff(service: BaseTariffs, category_name: str, category_page):
     keyboard = []
     for tariff in service.tariffs.items():
         name = tariff[1]['name']
@@ -122,7 +122,7 @@ def get_markup_group_tariff(service: BaseTariffs, category_name: str):
         ])
 
     keyboard.append([
-        InlineKeyboardButton(text='⬅️ Назад', callback_data=f'back_to_category:{category_name}')
+        InlineKeyboardButton(text='⬅️ Назад', callback_data=f'back_to_category:{category_name}:{category_page}')
     ])
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)

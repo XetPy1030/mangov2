@@ -42,7 +42,8 @@ async def service_handler(call):
 def render_group_tariff(call, service, category_name):
     markup = get_markup_group_tariff(
         service=service,
-        category_name=category_name
+        category_name=category_name,
+        category_page=get_page_from_service_name(category_name, service.__class__.__name__)
     )
     text = f"""
 Вы выбрали услугу <b>{service.name}</b>\n
