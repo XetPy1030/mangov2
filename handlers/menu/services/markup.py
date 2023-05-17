@@ -60,6 +60,7 @@ def get_page_from_service_name(category_key: str, service_name: str):
             return i // 4
 
 
+
 def get_action_keyboard_change_service_page(page, service_chunks, service_page):
     service_actions_keyboard = []
     if service_page > 0:
