@@ -57,7 +57,7 @@ def get_page_from_service_name(category_key: str, service_name: str):
     current_services = services_with_categories[category_key]['services']
     for i, service in enumerate(current_services):
         if service.__class__.__name__.lower() == service_name:
-            return (i+1) // PER_PAGE
+            return i // 4
 
 
 def get_action_keyboard_change_service_page(page, service_chunks, service_page):
