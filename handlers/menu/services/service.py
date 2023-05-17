@@ -1,5 +1,6 @@
 from core import router
-from handlers.menu.services.markup import get_order_service_keyboard, get_markup_group_tariff
+from handlers.menu.services.markup import get_order_service_keyboard, get_markup_group_tariff, \
+    get_page_from_service_name
 
 from info.services import services_with_categories
 from utils.filters.callback import CallbackFilter
@@ -33,7 +34,9 @@ async def service_handler(call):
         await call.answer('Service not found')
         return
 
-    await render_service(call, service, category_service)
+    category_page = get_page_from_service_name(category_service, name_service)
+
+    await render_service(call, service, category_service, category_page)
 
 
 def render_group_tariff(call, service, category_name):
@@ -48,11 +51,11 @@ def render_group_tariff(call, service, category_name):
     return call.message.answer(text, reply_markup=markup)
 
 
-async def render_service(call, service, category):
+async def render_service(call, service, category, category_page):
     is_image = hasattr(service, 'image')
 
     text = render_text(service)
-    markup = render_markup(service, category, call)
+    markup = render_markup(service, category, call, category_page)
 
     if is_image:
         await call.message.answer_photo(service.image, caption=text, reply_markup=markup)
@@ -79,8 +82,8 @@ def render_text(service):
     return text
 
 
-def render_markup(service, category, call):
-    return get_order_service_keyboard(service.__class__.__name__, category, call, service)
+def render_markup(service, category, call, category_page):
+    return get_order_service_keyboard(service.__class__.__name__, category, call, service, category_page)
 
 
 """

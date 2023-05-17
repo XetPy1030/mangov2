@@ -47,7 +47,6 @@ services_with_categories = {
             DevelopmentShopOnTilda(),
             DevelopmentOnTildaManyPages(),
 
-
             Consultation(),
             ConsultationWithAgencyOwner(),
         ],

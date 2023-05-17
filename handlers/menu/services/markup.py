@@ -53,6 +53,13 @@ def split_list_into_chunks(lst: List, chunk_size: int):
     return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
 
 
+def get_page_from_service_name(category_key: str, service_name: str):
+    current_services = services_with_categories[category_key]['services']
+    for i, service in enumerate(current_services):
+        if service.__class__.__name__.lower() == service_name:
+            return i // PER_PAGE
+
+
 def get_action_keyboard_change_service_page(page, service_chunks, service_page):
     service_actions_keyboard = []
     if service_page > 0:
@@ -170,12 +177,12 @@ def get_markup_services(page: int = 0):
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 
-def get_order_service_keyboard(service_name: str, category_name: str, callback, service):
+def get_order_service_keyboard(service_name: str, category_name: str, callback, service, category_page):
     if '_' in callback.data:
         callback_data = callback.data.split('_')[0]
         back_button = InlineKeyboardButton(text='⬅️ Назад', callback_data=callback_data)
     else:
-        back_button = InlineKeyboardButton(text='⬅️ Назад', callback_data=f'back_to_category:{category_name}')
+        back_button = InlineKeyboardButton(text='⬅️ Назад', callback_data=f'back_to_category:{category_name}:{category_page}')
 
     keyboard = [
         [
