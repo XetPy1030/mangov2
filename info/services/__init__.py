@@ -16,10 +16,10 @@ services_with_categories = {
 
             ScreenwriterOnFunnel(),
             Monetization(),
-            # Consultation(),
+            # ConsultationWithAgencyAdSpecialist(),
             # ConsultationSeniorSpecialist(),
 
-            ConsultationWithAgencyAdSpecialist(),
+            Consultation(),
             ConsultationWithAgencyOwner(),
         ],
         'type': 'simple',
@@ -32,7 +32,7 @@ services_with_categories = {
             ContentDeveloper(),
             MontagerCreatorVideos(),
 
-            ConsultationWithAgencyAdSpecialist(),
+            Consultation(),
             ConsultationWithAgencyOwner(),
         ],
         'type': 'simple',
@@ -45,7 +45,7 @@ services_with_categories = {
             LandingsInfoBuisness(),
             UXUIDesign(),
 
-            ConsultationWithAgencyAdSpecialist(),
+            Consultation(),
             ConsultationWithAgencyOwner(),
         ],
         'type': 'simple',
@@ -63,7 +63,7 @@ services_with_categories = {
             ContentCreatorInsta(),
             RealsMaker(),
 
-            ConsultationWithAgencyAdSpecialist(),
+            Consultation(),
             ConsultationWithAgencyOwner(),
         ],
         'type': 'simple'
