@@ -40,13 +40,9 @@ services_with_categories = {
     'web': {
         'name': 'Веб',
         'services': [
-            DevelopmentLandings(),
             UXUIDesign(),
-            DevelopmentLandingWithIntegrations(),
-            PlusFunctionalOnTildaCodom(),
-            DevelopmentShopOnTilda(),
-            DevelopmentOnTildaManyPages(),
             DevelopmentITPlatforms(),
+            TildaGroup(),
 
             Consultation(),
             ConsultationWithAgencyOwner(),

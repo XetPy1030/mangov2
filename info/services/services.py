@@ -260,6 +260,7 @@ class DevelopmentLandings(BaseService):
     price = 'от 270$'
 
 
+
 class DevelopmentITPlatforms(BaseService):
     type = 'simple'
     name = 'Разработка IT-платформ под ключ'
@@ -788,3 +789,35 @@ class ConsultationWithAgencyAdSpecialist(BaseService):
 Основная цель консультации - помочь вам разработать эффективный план рекламных действий, который позволит увеличить доходы вашего проекта или бизнеса и привлечь больше клиентов."""
     photo = 'AgACAgIAAxkBAAIDp2RSL_Y3fkU2krWtLTe2H2SFYIEVAALXxzEbGXeQSuVC9uzNb8I8AQADAgADeQADLwQ'
     price = '350 $'
+
+
+
+class TildaGroup(BaseTariffs):
+    DevelopmentLandings = DevelopmentLandings
+    DevelopmentLandingWithIntegrations = DevelopmentLandingWithIntegrations
+    PlusFunctionalOnTildaCodom = PlusFunctionalOnTildaCodom
+    DevelopmentShopOnTilda = DevelopmentShopOnTilda
+    DevelopmentOnTildaManyPages = DevelopmentOnTildaManyPages
+
+    tariffs = {
+        'development_landings': {
+            'name': 'Разработка лендингов под ключ без интеграций',
+            'service': DevelopmentLandings
+        },
+        'development_landing_with_integrations': {
+            'name': 'Разработка лендингов под ключ с интеграциями',
+            'service': DevelopmentLandingWithIntegrations
+        },
+        'plus_functional_on_tilda_codom': {
+            'name': 'Расширение функционала',
+            'service': PlusFunctionalOnTildaCodom
+        },
+        'development_shop_on_tilda': {
+            'name': 'Разработка интернет - магазинов',
+            'service': DevelopmentShopOnTilda
+        },
+        'development_on_tilda_many_pages': {
+            'name': 'Разработка корпоративных многостраничных сайтов',
+            'service': DevelopmentOnTildaManyPages
+        }
+    }
