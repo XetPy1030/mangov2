@@ -46,6 +46,7 @@ services_with_categories = {
             PlusFunctionalOnTildaCodom(),
             DevelopmentShopOnTilda(),
             DevelopmentOnTildaManyPages(),
+            DevelopmentITPlatforms(),
 
             Consultation(),
             ConsultationWithAgencyOwner(),

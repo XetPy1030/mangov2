@@ -256,7 +256,7 @@ class DevelopmentLandings(BaseService):
 - Настройка первичного seo, favicon
 - Подключение все форм захвата, подключение оповещений
 - Адаптация под контекстную рекламу, ловцы лидов и другие фишки для лучшей конверсии"""
-    image = 'AgACAgIAAxkBAAICSWRGRqDcmMMTPwi29MjdoDDk-QomAAJ4xDEbRLo4Svy7R8Bh-qdxAQADAgADeQADLwQ'
+    image = 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ'
     price = 'от 270$'
 
 
@@ -265,11 +265,13 @@ class DevelopmentITPlatforms(BaseService):
     name = 'Разработка IT-платформ под ключ'
     description = """ВХОДИТ:
 
-- ux/ui дизайн, 
-- front end, 
-- backend, 
-- тестирование, 
-- запуск"""
+- Анализ и планирование: изучение бизнес-требований, анализ рынка, определение функциональности и разработка плана проекта.
+- Проектирование: создание архитектуры и дизайна платформы, разработка интерфейса пользователя и определение базы данных.
+- Разработка: написание кода, программирование функциональности, создание и интеграция API.
+- Развёртывание и интеграция: подготовка окружения, установка программного обеспечения, интеграция с другими системами.
+- Тестирование и качество: функциональное тестирование, устранение ошибок, оптимизация производительности.
+- Внедрение и поддержка: запуск платформы, обучение пользователей, поддержка и развитие функциональности."""
+    price = 'обговаривается на консультации'
     image = 'AgACAgIAAxkBAAICQmRGRjAlvIt7zPe2wCPLhRBcCBq3AAJ1xDEbRLo4SmlED4qDA0ryAQADAgADeQADLwQ'
 
 
@@ -296,6 +298,7 @@ class UXUIDesign(BaseService):
 
 class DevelopmentLandingWithIntegrations(BaseService):
     type = 'simple'
+    image = 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ'
     name = "Разработка лендингов под ключ на тильда с интеграциями (CRM, эквайринг, модули бронирования и тд)"
     description = """Вы получаете лендинг, который работает на вас, а не висит мёртвым грузом  в сети.
 
@@ -316,6 +319,7 @@ class DevelopmentLandingWithIntegrations(BaseService):
 class PlusFunctionalOnTildaCodom(BaseService):
     type = 'simple'
     name = 'Расширение функционала сайтов на тильда кодом'
+    image = 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ'
     description = """У вас уже есть сайт на Тильда, но вам не хватает его функционала и нужно его доработать, но в Тильде нет штатных решений для этого? 
 
 Не беда, Функциональность вашего сайта может быть расширена с помощью кода. Просто напишите свои пожелания к функционалу сайта и поможем вам!"""
@@ -325,6 +329,7 @@ class PlusFunctionalOnTildaCodom(BaseService):
 class DevelopmentShopOnTilda(BaseService):
     type = 'simple'
     name = 'Разработка на тильде интернет - магазинов'
+    image = 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ'
     description = """Вы получаете удобный и стильный интернет-магазин,с системой фильтрации товаров и приёмом платежей.
 
 ВХОДИТ:
@@ -359,6 +364,7 @@ class DevelopmentOnTildaManyPages(BaseService):
 - Адаптация под контекстную рекламу, ловцы лидов и другие фишки для лучшей конверсии
 - Подключения эквайринга для приёма оплаты на сайт/ интеграция с CRM системой, подключение модулей бронирования для отелей,а также множество других интеграций для вашего удобства"""
     price = 'от 470$'
+    image = 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ'
 
 
 class TargetInsta(BaseTariffs):
