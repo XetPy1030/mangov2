@@ -821,3 +821,5 @@ class TildaGroup(BaseTariffs):
             'service': DevelopmentOnTildaManyPages
         }
     }
+
+    name = 'Тильда'
