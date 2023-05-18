@@ -260,7 +260,6 @@ class DevelopmentLandings(BaseService):
     price = 'от 270$'
 
 
-
 class DevelopmentITPlatforms(BaseService):
     type = 'simple'
     name = 'Разработка IT-платформ под ключ'
@@ -791,8 +790,9 @@ class ConsultationWithAgencyAdSpecialist(BaseService):
     price = '350 $'
 
 
-
 class TildaGroup(BaseTariffs):
+    type = 'tariff'
+
     DevelopmentLandings = DevelopmentLandings
     DevelopmentLandingWithIntegrations = DevelopmentLandingWithIntegrations
     PlusFunctionalOnTildaCodom = PlusFunctionalOnTildaCodom
