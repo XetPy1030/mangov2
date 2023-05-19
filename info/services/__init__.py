@@ -16,10 +16,6 @@ services_with_categories = {
 
             ScreenwriterOnFunnel(),
             Monetization(),
-            # ConsultationWithAgencyAdSpecialist(),
-            # ConsultationSeniorSpecialist(),
-
-            Consultation(),
         ],
         'type': 'simple',
     },
@@ -30,8 +26,6 @@ services_with_categories = {
             Designer(),
             ContentDeveloper(),
             MontagerCreatorVideos(),
-
-            Consultation(),
         ],
         'type': 'simple',
     },
@@ -41,8 +35,6 @@ services_with_categories = {
             UXUIDesign(),
             DevelopmentITPlatforms(),
             TildaGroup(),
-
-            Consultation(),
         ],
         'type': 'simple',
     },
@@ -58,14 +50,13 @@ services_with_categories = {
             ScenaristInsta(),
             ContentCreatorInsta(),
             RealsMaker(),
-
-            Consultation(),
         ],
         'type': 'simple'
     },
     'other': {
         'name': 'Другое',
         'services': [
+            Consultation(),
             ConsultationWithAgencyOwner(),
         ]
     }
