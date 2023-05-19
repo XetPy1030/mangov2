@@ -20,7 +20,6 @@ services_with_categories = {
             # ConsultationSeniorSpecialist(),
 
             Consultation(),
-            ConsultationWithAgencyOwner(),
         ],
         'type': 'simple',
     },
@@ -33,7 +32,6 @@ services_with_categories = {
             MontagerCreatorVideos(),
 
             Consultation(),
-            ConsultationWithAgencyOwner(),
         ],
         'type': 'simple',
     },
@@ -45,7 +43,6 @@ services_with_categories = {
             TildaGroup(),
 
             Consultation(),
-            ConsultationWithAgencyOwner(),
         ],
         'type': 'simple',
     },
@@ -63,17 +60,15 @@ services_with_categories = {
             RealsMaker(),
 
             Consultation(),
-            ConsultationWithAgencyOwner(),
         ],
         'type': 'simple'
     },
-    # 'other': {
-    #     'name': 'Другое',
-    #     'services': [
-    #         ConsultationWithAgencyAdSpecialist(),
-    #         ConsultationWithAgencyOwner(),
-    #     ]
-    # }
+    'other': {
+        'name': 'Другое',
+        'services': [
+            ConsultationWithAgencyOwner(),
+        ]
+    }
 }
 
 services = {
