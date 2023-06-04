@@ -393,7 +393,7 @@ def render_folder(page, page_str_copy: str):
             callback_data=f'{page_str_copy}:{i}'  # TODO: add handler to start word
         )])
 
-    markup = types.InlineKeyboardMarkup()
+    markup = types.InlineKeyboardMarkup(inline_keyboard=markup_keyboard)
     markup.inline_keyboard = markup_keyboard
 
     return text, markup, image
