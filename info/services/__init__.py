@@ -4,70 +4,70 @@ from aiogram import types
 
 from .services import *
 
-# services_with_categories = {
-#     'telegram': {
-#         'name': 'Телеграм',
-#         'services': [
-#             ChannelPackaging(),
-#             ChannelPromotionAdBlogers(),
-#             ChannelPromotionAd(),
-#             Logo(),
-#             DesignBanners(),
-#
-#             Bot(),
-#             AdvertisingCreative(),
-#             ContentChannel(),
-#             ChannelAdmin(),
-#
-#             ScreenwriterOnFunnel(),
-#             Monetization(),
-#         ],
-#         'type': 'simple',
-#     },
-#     'youtube': {
-#         'name': 'Youtube',
-#         'services': [
-#             AdvertisingManager(),
-#             Designer(),
-#             ContentDeveloper(),
-#             MontagerCreatorVideos(),
-#         ],
-#         'type': 'simple',
-#     },
-#     'web': {
-#         'name': 'Веб',
-#         'services': [
-#             UXUIDesign(),
-#             DevelopmentITPlatforms(),
-#             TildaGroup(),
-#         ],
-#         'type': 'simple',
-#     },
-#     'insta': {
-#         'name': 'Инстаграм',
-#         'services': [
-#             TargetInsta(),
-#             StoriesMakerInsta(),
-#             ContentManagerInsta(),
-#             VisualAssistantInsta(),
-#
-#             CopyWriterInsta(),
-#             ScenaristInsta(),
-#             ContentCreatorInsta(),
-#             RealsMaker(),
-#         ],
-#         'type': 'simple'
-#     },
-#     'other': {
-#         'name': 'Другое',
-#         'services': [
-#             Consultation(),
-#             ConsultationWithAgencyOwner(),
-#         ]
-#     }
-# }
+services_with_categories = {
+    'telegram': {
+        'name': 'Телеграм',
+        'services': [
+            ChannelPackaging(),
+            ChannelPromotionAdBlogers(),
+            ChannelPromotionAd(),
+            Logo(),
+            DesignBanners(),
 
-services_with_categories = {}
+            Bot(),
+            AdvertisingCreative(),
+            ContentChannel(),
+            ChannelAdmin(),
+
+            ScreenwriterOnFunnel(),
+            Monetization(),
+        ],
+        'type': 'simple',
+    },
+    'youtube': {
+        'name': 'Youtube',
+        'services': [
+            AdvertisingManager(),
+            Designer(),
+            ContentDeveloper(),
+            MontagerCreatorVideos(),
+        ],
+        'type': 'simple',
+    },
+    'web': {
+        'name': 'Веб',
+        'services': [
+            UXUIDesign(),
+            DevelopmentITPlatforms(),
+            TildaGroup(),
+        ],
+        'type': 'simple',
+    },
+    'insta': {
+        'name': 'Инстаграм',
+        'services': [
+            # TargetInsta(),
+            # StoriesMakerInsta(),
+            # ContentManagerInsta(),
+            # VisualAssistantInsta(),
+
+            # CopyWriterInsta(),
+            # ScenaristInsta(),
+            ContentCreatorInsta(),
+            RealsMaker(),
+        ],
+        'type': 'simple'
+    },
+    'other': {
+        'name': 'Другое',
+        'services': [
+            Consultation(),
+            ConsultationWithAgencyOwner(),
+        ]
+    }
+}
+
+# services_with_categories = {}
 
 texts = {
     'main_folder': """Добро пожаловать в Digital - агенство «BB$: Brain & Best solution»
@@ -90,42 +90,52 @@ structure = {
             'children': [
                 {
                     'type': 'service',
+                    'button': '📦 Упаковка канала',
                     'name': 'channel_packaging',
                 },
                 {
                     'type': 'service',
+                    'button': '📈 Продвижение канала блогером',
                     'name': 'channel_promotion_ad_blogers',
                 },
                 {
                     'type': 'service',
+                    'button': '📈 Продвижение канала рекламой',
                     'name': 'channel_promotion_ad',
                 },
                 {
                     'type': 'service',
+                    'button': '🖼 Логотип',
                     'name': 'logo',
                 },
                 {
                     'type': 'service',
+                    'button': '🖼 Дизайн баннеров',
                     'name': 'design_banners',
                 },
                 {
                     'type': 'service',
+                    'button': '🤖 Бот',
                     'name': 'bot',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Рекламный креатив',
                     'name': 'advertising_creative',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Контент для канала',
                     'name': 'content_channel',
                 },
                 {
                     'type': 'service',
+                    'button': '👨‍💼 Администратор канала',
                     'name': 'channel_admin',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Сценарист на воронке',
                     'name': 'screenwriter_on_funnel',
                 },
                 {
