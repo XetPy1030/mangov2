@@ -349,6 +349,8 @@ def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[s
         page_str_copy = page_str
 
     page_list = page_str.split(':')
+    if page_list[0] == '':
+        page_list = page_list[1:]
 
     if not page_list:
         return render_page(page, page_str_copy)
