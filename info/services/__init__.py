@@ -457,8 +457,7 @@ def render_folder(page, page_str_copy: str, page_index: int):
             callback_data=f'{left}:{right}@{page_index+1}'
         )])
 
-    if page_str_copy:
-        print('back', page_str_copy.split(':')[:-1])
+    if len(page_str_copy.split(':')) > 1:
         markup_keyboard.append([types.InlineKeyboardButton(
             text="Назад",
             callback_data=':'.join(page_str_copy.split(':')[:-1])
