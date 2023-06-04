@@ -37,7 +37,7 @@ def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
                 saved = splitted_callback_data[:-1]
                 page_index = int(splitted_callback_data[-1].split('@')[1]) if len(splitted_callback_data[-1].split('@')) > 1 else 0
                 data = ':'.join(saved)+'@'+str(page_index)
-                print('han', splitted_callback_data, data)
+                print('han', splitted_callback_data, data, saved, page_index)
 
 
             j.callback_data = 'new_service:' + data
