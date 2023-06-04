@@ -11,7 +11,7 @@ from utils.filters.callback import CallbackFilter
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
 async def our_services(message: Message):
-    text, markup, image = render('')
+    text, markup, image = render('0')
     if image:
         await message.answer_photo(
             image,
