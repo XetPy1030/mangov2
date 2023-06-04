@@ -1,3 +1,4 @@
+from aiogram import types
 from aiogram.filters import Text
 from aiogram.types import Message
 
@@ -9,9 +10,7 @@ from info.services import render
 from utils.filters.callback import CallbackFilter
 
 
-@router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
-async def our_services(message: Message):
-    text, markup, image = render('0')
+async def answer(message, text, markup, image):
     if image:
         await message.answer_photo(
             image,
@@ -23,11 +22,33 @@ async def our_services(message: Message):
             text,
             reply_markup=markup
         )
+
+
+def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
+    for i in markup.inline_keyboard:
+        for j in i:
+            j.callback_data = 'new_service:' + j.callback_data
+    return markup
+
+
+
+@router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
+async def our_services(message: Message):
+    text, markup, image = render('')
+    markup = handler_for_markup_for_service(markup)
+    await answer(message, text, markup, image)
     # await message.answer_photo(
     #     media.OUR_SERVICES_PICTURE,
     #     caption=lang.menu.services.OUR_SERVICES,
     #     reply_markup=render_categories()
     # )
+
+
+@router.callback_query(CallbackFilter('new_service'))
+async def new_service(call):
+    text, markup, image = render(call.data.removeprefix('new_service:'))
+    markup = handler_for_markup_for_service(markup)
+    await answer(call.message, text, markup, image)
 
 
 @router.callback_query(CallbackFilter('category'))
