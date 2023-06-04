@@ -27,9 +27,10 @@ async def answer(message, text, markup, image):
 def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
     for i in markup.inline_keyboard:
         for j in i:
-            split_data = j.callback_data.split('@')
-            page_str = split_data[0]
-            page_index = int(split_data[1]) if len(split_data) > 1 else 0
+            current_page = j.callback_data.split(':')[-1]
+            current_page_split = current_page.split('@')
+            page_index = int(current_page_split[1]) if len(current_page_split) > 1 else 0
+            page_str = ':'.join(current_page_split[0].split(':')[:-1])
             j.callback_data = 'new_service:' + page_str + '@' + str(page_index)
     return markup
 
