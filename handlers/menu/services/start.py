@@ -43,6 +43,7 @@ async def our_services(message: Message):
 
 @router.callback_query(CallbackFilter('new_service'))
 async def new_service(call):
+    print(call.data)
     callback_data = call.data.removeprefix('new_service:')
     split_data = callback_data.split('@')
     page_str = split_data[0]
