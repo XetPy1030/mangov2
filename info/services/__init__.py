@@ -428,6 +428,7 @@ def render_folder(page, page_str_copy: str):
     markup_keyboard = []
     children = page['children']
     for i, child in enumerate(children):
+        callback_data = f'{page_str_copy}:{i}' if page_str_copy else f'{i}'
         markup_keyboard.append([types.InlineKeyboardButton(
             text=child['button'],
             callback_data=f'{page_str_copy}:{i}'  # TODO: add handler to start word
