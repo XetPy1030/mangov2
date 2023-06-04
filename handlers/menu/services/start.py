@@ -27,30 +27,30 @@ async def answer(message, text, markup, image):
 def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
     for i in markup.inline_keyboard:
         for j in i:
-            j.callback_data = 'new_service:' + j.callback_data
+            split_data = j.callback_data.split('@')
+            page_str = split_data[0]
+            page_index = int(split_data[1]) if len(split_data) > 1 else 0
+            j.callback_data = 'new_service:' + page_str + '@' + str(page_index)
     return markup
-
 
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
 async def our_services(message: Message):
-    text, markup, image = render('')
+    text, markup, image = render('', page_index=0)
     markup = handler_for_markup_for_service(markup)
     await answer(message, text, markup, image)
-    # await message.answer_photo(
-    #     media.OUR_SERVICES_PICTURE,
-    #     caption=lang.menu.services.OUR_SERVICES,
-    #     reply_markup=render_categories()
-    # )
 
 
 @router.callback_query(CallbackFilter('new_service'))
 async def new_service(call):
-    page_str = call.data.removeprefix('new_service:')
-    print('open', page_str, call.data)
-    text, markup, image = render(page_str)
+    callback_data = call.data.removeprefix('new_service:')
+    split_data = callback_data.split('@')
+    page_str = split_data[0]
+    page_index = int(split_data[1]) if len(split_data) > 1 else 0
+    text, markup, image = render(page_str, page_index=page_index)
     markup = handler_for_markup_for_service(markup)
     await answer(call.message, text, markup, image)
+
 
 
 @router.callback_query(CallbackFilter('category'))
