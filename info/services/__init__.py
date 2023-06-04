@@ -73,7 +73,7 @@ texts = {
     'main_folder': """Добро пожаловать в Digital - агенство «BB$: Brain & Best solution»
 
 <I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>""",
-    'service_choice_tariff': """Вы выбрали услугу <b>{button}</b>
+    'choice_tariff': """Вы выбрали услугу <b>{button}</b>
 Выберете тариф из списка ниже 👇🏼""",
 }
 
