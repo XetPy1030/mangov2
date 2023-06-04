@@ -432,7 +432,7 @@ def render_folder(page, page_str_copy: str):
         markup_keyboard.append(
             [types.InlineKeyboardButton(
                 text=child['button'],
-                callback_data=page_str_copy  # TODO: add handler to start word
+                callback_data=callback_data  # TODO: add handler to start word
             )]
         )
 
