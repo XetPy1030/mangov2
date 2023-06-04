@@ -34,10 +34,10 @@ def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
             elif len(splitted_callback_data) == 0:
                 data = ''
             else:
-                print(splitted_callback_data)
                 saved = splitted_callback_data[:-1]
                 page_index = int(splitted_callback_data[-1].split('@')[1]) if len(splitted_callback_data[-1].split('@')) > 1 else 0
                 data = ':'.join(saved)+'@'+str(page_index)
+                print('han', splitted_callback_data, data)
 
 
             j.callback_data = 'new_service:' + data
