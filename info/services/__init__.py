@@ -448,9 +448,11 @@ def render_folder(page, page_str_copy: str, page_index: int):
         )])
 
     if end_index < len(children):
+        left = ':'.join(page_str_copy.split(':')[:-1]) if page_str_copy else ''
+        right = page_str_copy.split(':')[-1].split('@')[0] if page_str_copy else ''
         markup_keyboard.append([types.InlineKeyboardButton(
             text="Next >>",
-            callback_data=f'{page_str_copy}@{page_index+1}'
+            callback_data=f'{left}:{right}@{page_index+1}'
         )])
 
     if page_str_copy:
