@@ -8,6 +8,8 @@ services_with_categories = {
             ChannelPromotionAdBlogers(),
             ChannelPromotionAd(),
             Logo(),
+            DesignBanners(),
+
 
             Bot(),
             AdvertisingCreative(),

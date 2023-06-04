@@ -69,6 +69,21 @@ class Logo(BaseService):
     image = 'AgACAgIAAxkBAAICNWRGRYjAbOnzTrhn9bPER8x83zcZAAJvxDEbRLo4SnvLYNW3w6B0AQADAgADeQADLwQ'
 
 
+class DesignBanners(BaseService):
+    type = 'simple'
+    name = 'Дизайн баннеров'
+    price = 'от 15$'
+    description = """ВХОДИТ:
+
+- Разработка баннера по ТЗ
+- Подбор цветов, соответствующих вашему бренду
+- Создание дизайна, учитывая уникальные особенности
+- Создание баннера для рекламы вашего канала 
+- Создание уникальных баннеров для ваших постов
+- Интеграция логотипа или водяных знаков
+- Разработка нескольких версий баннера для выбора наиболее оптимального"""
+
+
 class Bot(BaseService):
     type = 'simple'
     name = 'Бот'
@@ -199,7 +214,7 @@ class AdvertisingManager(BaseService):
 
 class Designer(BaseService):
     type = 'simple'
-    name = 'Дизайнер'
+    name = 'Дизайнер YouTub канала'
     time = 'от 2 дней'
     description = """ВХОДИТ:
 
