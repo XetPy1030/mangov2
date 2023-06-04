@@ -153,18 +153,22 @@ structure = {
             'children': [
                 {
                     'type': 'service',
+                    'button': '📈 Рекламный менеджер',
                     'name': 'advertising_manager',
                 },
                 {
                     'type': 'service',
+                    'button': '🖼 Дизайнер',
                     'name': 'designer',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Контент для канала',
                     'name': 'content_developer',
                 },
                 {
                     'type': 'service',
+                    'button': '📹 Монтажер. Создание видео',
                     'name': 'montager_creator_videos',
                 }
             ]
@@ -177,10 +181,12 @@ structure = {
             'children': [
                 {
                     'type': 'service',
+                    'button': '📝 UX/UI дизайн',
                     'name': 'ux_ui_design',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Разработка сайта',
                     'name': 'development_it_platforms',
                 },
                 {
@@ -191,22 +197,27 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 Разработка лендинга',
                             'name': 'development_landings_tilda_group',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Разработка лендинга с интеграциями',
                             'name': 'development_landing_with_integrations_tilda_group',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Разработка лендинга с функционалом',
                             'name': 'plus_functional_on_tilda_codom_tilda_group',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Разработка интернет-магазина',
                             'name': 'development_shop_on_tilda_tilda_group',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Разработка многостраничного сайта',
                             'name': 'development_on_tilda_many_pages_tilda_group',
                         }
                     ]
@@ -227,10 +238,12 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 Базовый таргет',
                             'name': 'base_target_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Полный таргет',
                             'name': 'full_target_insta',
                         }
                     ]
@@ -243,14 +256,17 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 сторис 1 день',
                             'name': 'daily_stories_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Недельный сторис',
                             'name': 'weekly_stories_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Месячный сторис',
                             'name': 'monthly_stories_insta',
                         }
                     ]
@@ -263,10 +279,12 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 Недельный контент-менеджер',
                             'name': 'weekly_content_manager_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Месячный контент-менеджер',
                             'name': 'monthly_content_manager_insta',
                         }
                     ]
@@ -279,10 +297,12 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 Визуальный ассистент поштучно',
                             'name': 'piece_by_piece_visual_assistant_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Месячный визуальный ассистент',
                             'name': 'monthly_visual_assistant_insta',
                         }
                     ]
@@ -295,10 +315,12 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 Редактирование текста',
                             'name': 'editing_copy_writer_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Написание текста',
                             'name': 'writing_copy_writer_insta',
                         }
                     ]
@@ -311,24 +333,29 @@ structure = {
                     'children': [
                         {
                             'type': 'service',
+                            'button': '📝 Одноразовый сценарист',
                             'name': 'one_time_scenarist_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Недельный сценарист',
                             'name': 'weekly_scenarist_insta',
                         },
                         {
                             'type': 'service',
+                            'button': '📝 Месячный сценарист',
                             'name': 'monthly_scenarist_insta',
                         }
                     ]
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Контент-креатор',
                     'name': 'content_creator_insta',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Рилсмейкер',
                     'name': 'reals_maker_insta',
                 }
             ]
