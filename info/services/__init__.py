@@ -461,6 +461,19 @@ def render_folder(page, page_str_copy: str, page_index: int = 0):
 
 
 
+def render_page(page, page_str_copy: str):
+    # return text, markup, image
+    match page['type']:
+        case 'service':
+            return render_service(page, page_str_copy)
+        case 'folder':
+            return render_folder(page, page_str_copy)
+
+
+def render_service(page, page_str_copy: str):
+    ...
+
+
 
     # match child['type']:
     #     case 'service':
