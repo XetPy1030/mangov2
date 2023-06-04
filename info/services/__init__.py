@@ -429,33 +429,33 @@ def render_folder(page, page_str_copy: str):
     children = page['children']
     for i, child in enumerate(children):
         callback_data = f'{page_str_copy}:{i}' if page_str_copy else f'{i}'
-        markup_keyboard.append([types.InlineKeyboardButton(
-            text=child['button'],
-            callback_data=f'{page_str_copy}:{i}'  # TODO: add handler to start word
-        )])
+        markup_keyboard.append(
+            [types.InlineKeyboardButton(
+                text=child['button'],
+                callback_data=page_str_copy  # TODO: add handler to start word
+            )]
+        )
 
     markup = types.InlineKeyboardMarkup(inline_keyboard=markup_keyboard)
     markup.inline_keyboard = markup_keyboard
 
     return text, markup, image
 
-        # match child['type']:
-        #     case 'service':
-        #         markup.append(
-        #             [types.InlineKeyboardButton(
-        #                 text=child['button'],
-        #                 callback_data=f'service:{page_str_copy}:{i}'
-        #             )]
-        #         )
-        #     case 'folder':
-        #         markup.append(
-        #             [types.InlineKeyboardButton(
-        #                 text=child['button'],
-        #                 callback_data=f'folder:{page_str_copy}:{i}'
-        #             )]
-        #         )
-
-
+    # match child['type']:
+    #     case 'service':
+    #         markup.append(
+    #             [types.InlineKeyboardButton(
+    #                 text=child['button'],
+    #                 callback_data=f'service:{page_str_copy}:{i}'
+    #             )]
+    #         )
+    #     case 'folder':
+    #         markup.append(
+    #             [types.InlineKeyboardButton(
+    #                 text=child['button'],
+    #                 callback_data=f'folder:{page_str_copy}:{i}'
+    #             )]
+    #         )
 
 
 services_dict = {
