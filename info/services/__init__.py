@@ -406,7 +406,7 @@ def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[s
             page_children = page['children']
             if page_num < 0 or page_num >= len(page_children):
                 raise Exception('Ошибка страницы')
-            return render(':'.join(page_list[1:]), page_children[page_num])
+            return render(':'.join(page_list[1:]), page_children[page_num], page_str_copy)
 
 
 def render_page(page, page_str_copy: str):
