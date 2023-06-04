@@ -368,10 +368,12 @@ structure = {
             'children': [
                 {
                     'type': 'service',
+                    'button': '📝 Консультация',
                     'name': 'consultation',
                 },
                 {
                     'type': 'service',
+                    'button': '📝 Консультация с владельцем агентства',
                     'name': 'consultation_with_agency_owner',
                 }
             ]
