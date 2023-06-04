@@ -32,7 +32,7 @@ def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
                 page_index = int(splitted_callback_data[0].split('@')[1]) if len(
                     splitted_callback_data[0].split('@')
                     ) > 1 else 0
-                data = splitted_callback_data[0] + '@' + str(page_index)
+                data = splitted_callback_data[0].split('@')[0] + '@' + str(page_index)
             elif len(splitted_callback_data) == 0:
                 data = ''
             else:
