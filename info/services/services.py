@@ -382,12 +382,11 @@ class DevelopmentOnTildaManyPages(BaseService):
     image = 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ'
 
 
-class TargetInsta(BaseTariffs):
-    class Base(BaseService):
-        type = 'simple'
-        name = 'Таргет-базовый'
-        time = '2 недели'
-        description = """ВХОДИТ:
+class BaseTargetInsta(BaseService):
+    type = 'simple'
+    name = 'Таргет-базовый'
+    time = '2 недели'
+    description = """ВХОДИТ:
 
 - Подбор и изучение ЦА 
 - Разделение аудитории на 3-5 сегментов
@@ -397,14 +396,14 @@ class TargetInsta(BaseTariffs):
 - 10 рекламных креативов 
 - оптимизация креативов в течении 2ух недель 
 - составление рекламных слоганов"""
-        price = '350$ + ваш бюджет на 2 недели'
-        image = 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E'
+    price = '350$ + ваш бюджет на 2 недели'
+    image = 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E'
 
-    class Full(BaseService):
-        type = 'simple'
-        name = 'Таргет-полный'
-        time = '1 месяц'
-        description = """ВХОДИТ:
+class FullTargetInsta(BaseService):
+    type = 'simple'
+    name = 'Таргет-полный'
+    time = '1 месяц'
+    description = """ВХОДИТ:
 
 - Подбор и изучение ЦА 
 - Разделение аудитории на сегменты
@@ -416,46 +415,31 @@ class TargetInsta(BaseTariffs):
 - оптимизация креативов в течении всего месяца 
 - составление рекламных слоганов
 - Разработка рекламной стратегии на следующий месяца"""
-        price = """600$ + Бюджет до 1500$
+    price = """600$ + Бюджет до 1500$
 
 Свыше 1500$ - 35% от бюджета"""
-        image = 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E'
-
-    tariffs = {
-        'base': {
-            'name': 'базовый',
-            'service': Base
-        },
-        'full': {
-            'name': 'полный',
-            'service': Full
-        }
-    }
-
-    name = 'Таргетинг'
-    type = 'tariff'
+    image = 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E'
 
 
-class StoriesMakerInsta(BaseTariffs):
-    class Daily(BaseService):
-        type = 'simple'
-        name = 'По суточно'
-        time = 'сутки'
-        description = """ВХОДИТ:
+class DailyStoriesMakerInsta(BaseService):
+    type = 'simple'
+    name = 'По суточно'
+    time = 'сутки'
+    description = """ВХОДИТ:
 - Из вашего текста составим полноценный сторрителлинг
 - Напишем свой на любую тему
 - Предоставим вам текст для озвучки
 - Оформим истории на сутки в индивидуальном стиле
 - 10-15 оформленных историй
 - Несколько вовлекающих историй"""
-        price = '28$'
-        image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
+    price = '28$'
+    image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
-    class Weekly(BaseService):
-        type = 'simple'
-        name = 'Недельно'
-        time = '3 раза в неделю'
-        description = """ВХОДИТ:
+class WeeklyStoriesMakerInsta(BaseService):
+    type = 'simple'
+    name = 'Недельно'
+    time = '3 раза в неделю'
+    description = """ВХОДИТ:
 - Создание контент-плана на 3 дня
 - Предложение тем на сторрителлинг
 - Написание сценария на сторрителлинг
@@ -465,14 +449,14 @@ class StoriesMakerInsta(BaseTariffs):
 - 8-10 оформленных историй в сутки 3 раза в неделю
 - Анализ реакций аудитории
 - 20% вовлекающих историй"""
-        price = '75$'
-        image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
+    price = '75$'
+    image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
-    class Monthly(BaseService):
-        type = 'simple'
-        name = 'Месячно'
-        time = 'месяц'
-        description = """ВХОДИТ:
+class MonthlyStoriesMakerInsta(BaseService):
+    type = 'simple'
+    name = 'Месячно'
+    time = 'месяц'
+    description = """ВХОДИТ:
 - Создание контент-плана на месяц 
 - Предложение тем на сторрителлинг
 - Написание сценария на сторрителлинг, исходя из сочетаемости контента на странице и всего контента в историях в течении месяца
@@ -483,26 +467,8 @@ class StoriesMakerInsta(BaseTariffs):
 - Анализ реакций аудитории
 - 40% вовлекающих историй
 - Регулярная генерация нового контента"""
-        price = '700$'
-        image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
-
-    tariffs = {
-        'daily': {
-            'name': 'по суточно',
-            'service': Daily
-        },
-        'weekly': {
-            'name': 'недельно',
-            'service': Weekly
-        },
-        'monthly': {
-            'name': 'месячно',
-            'service': Monthly
-        }
-    }
-
-    name = 'Сторисмейкер'
-    type = 'tariff'
+    price = '700$'
+    image = 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ'
 
 
 class ContentCreatorInsta(BaseService):
@@ -520,24 +486,23 @@ class ContentCreatorInsta(BaseService):
     image = 'AgACAgIAAxkBAAIDl2RSL6uuJ9WVDkVArlVE-KKCyaTHAALWxzEbGXeQSmnMQlOf2TLxAQADAgADeQADLwQ'
 
 
-class ContentManagerInsta(BaseTariffs):
-    class Weekly(BaseService):
-        type = 'simple'
-        name = 'Контент-менеджер - недельно'
-        description = """ВХОДИТ:
+class WeeklyContentManagerInsta(BaseService):
+    type = 'simple'
+    name = 'Контент-менеджер - недельно'
+    description = """ВХОДИТ:
 
 - Создание контент - плана в ленту
-- Создание рубрикатора в ленту и в Хайлайтс
+- Создание рубрикаContentManagerInstaтора в ленту и в Хайлайтс
 - Написание ТЗ для копирайтера/ сторисмейкера
 - Помощь в создании контента в ленту, в истории
 """
-        price = '60$/ неделя'
-        image = 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ'
+    price = '60$/ неделя'
+    image = 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ'
 
-    class Monthly(BaseService):
-        type = 'simple'
-        name = 'Контент-менеджер - месячно'
-        description = """ВХОДИТ:
+class MonthlyContentManagerInsta(BaseService):
+    type = 'simple'
+    name = 'Контент-менеджер - месячно'
+    description = """ВХОДИТ:
 
 - Создание контент - плана в ленту на месяц
 - Создание рубрикатора в ленту и в Хайлайтс
@@ -546,39 +511,25 @@ class ContentManagerInsta(BaseTariffs):
 - Оптимизация контента на следующий месяц 
 - анализ данных 
 """
-        price = '200$/ месяц'
-        image = 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ'
-
-    tariffs = {
-        'weekly': {
-            'name': 'недельно',
-            'service': Weekly
-        },
-        'monthly': {
-            'name': 'месячно',
-            'service': Monthly
-        }
-    }
-    name = 'Контент-менеджер'
-    type = 'tariff'
+    price = '200$/ месяц'
+    image = 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ'
 
 
-class VisualAssistantInsta(BaseTariffs):
-    class PieceByPiece(BaseService):
-        type = 'simple'
-        name = 'Штучно'
-        description = """ВХОДИТ:
+class PieceByPieceVisualAssistantInsta(BaseService):
+    type = 'simple'
+    name = 'Штучно'
+    description = """ВХОДИТ:
 
 - оформление картинки на 1 пост в ленту в уникальном стиле и в заданной цветовой гамме
 - Подбор уникального шрифта
 """
-        price = '10$/ шт'
-        image = 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E'
+    price = '10$/ шт'
+    image = 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E'
 
-    class Monthly(BaseService):
-        type = 'simple'
-        name = 'Месячно'
-        description = """ВХОДИТ:
+class MonthlyVisualAssistantInsta(BaseService):
+    type = 'simple'
+    name = 'Месячно'
+    description = """ВХОДИТ:
 
 - Компановка ленты из ваших фотографий
 - Подбор картинок в ленту и их оформление в уникальном стиле
@@ -590,29 +541,14 @@ class VisualAssistantInsta(BaseTariffs):
 - Лента из 25-30 фотографий, сочетающихся между собой
 - Подбор шрифта
 """
-        price = '260$'
-        image = 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E'
-
-    tariffs = {
-        'piece_b_p': {
-            'name': 'штучно',
-            'service': PieceByPiece
-        },
-        'monthly': {
-            'name': 'месячно',
-            'service': Monthly
-        }
-    }
-
-    name = 'Визуальный ассистент'
-    type = 'tariff'
+    price = '260$'
+    image = 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E'
 
 
-class CopyWriterInsta(BaseTariffs):
-    class Editing(BaseService):
-        type = 'simple'
-        name = 'Редактирование'
-        description = """ВХОДИТ: 
+class EditingCopyWriterInsta(BaseService):
+    type = 'simple'
+    name = 'Редактирование'
+    description = """ВХОДИТ: 
 
 - Редактирование вашего текста, исходя из правил русского языка
 - Редактирование вашего текста, исходя из правил маркетинга
@@ -620,72 +556,57 @@ class CopyWriterInsta(BaseTariffs):
 - Помощь в формировании ToV (языка целевой аудитории)
 - Регулярное сопровождение в течение месяца
 """
-        price = """до 10 постов - 8$/ каждый пост
+    price = """до 10 постов - 8$/ каждый пост
 
 от 10 постов - 6$/каждый пост"""
-        image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
+    image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
 
-    class Writing(BaseService):
-        type = 'simple'
-        name = 'Написание'
-        description = """ВХОДИТ: 
+class WritingCopyWriterInsta(BaseService):
+    type = 'simple'
+    name = 'Написание'
+    description = """ВХОДИТ: 
 
 - Написание текста на любую тему, исходя из правил русского языка, правил маркетинга, анализа ЦА, анализа конкурентов
 - Формирование ToV (языка целевой аудитории)
 - Регулярное сопровождение в течение месяца
 """
-        price = """до 10 постов - 12$/шт
+    price = """до 10 постов - 12$/шт
 от 10 постов - 8$/ шт"""
-        image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
-
-    tariffs = {
-        'editing': {
-            'name': 'редактирование',
-            'service': Editing
-        },
-        'writing': {
-            'name': 'написание',
-            'service': Writing
-        }
-    }
-
-    name = 'Копирайтер'
-    type = 'tariff'
+    image = 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ'
 
 
-class ScenaristInsta(BaseTariffs):
-    class OneTime(BaseService):
-        type = 'simple'
-        name = 'Сценарист'
-        time = '3-5 дней'
-        description = """ВХОДИТ:
+class OneTimeScenaristInsta(BaseService):
+    type = 'simple'
+    name = 'Сценарист'
+    time = '3-5 дней'
+    description = """ВХОДИТ:
 
 - написание продающего сценария на 1 день
 - 8-10 историй с «прогревающим» контентом, направленным на продажу продукта
 - 30%-40% вовлекающих историй
 """
-        price = '40$'
-        image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
+    price = '40$'
+    image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
-    class Weekly(BaseService):
-        type = 'simple'
-        name = 'Сценарист'
-        time = '5-8 дней'
-        description = """ВХОДИТ:
+class WeeklyScenaristInsta(BaseService):
+    type = 'simple'
+    name = 'Сценарист'
+    time = '5-8 дней'
+    description = """ВХОДИТ:
 
 - написание продающего сценария на 7 дней
 - 8-10 историй с «прогревающим» контентом, направленным на продажу продукта/ прогреву к вебинару/ марфону и тд/  каждый день 
 - 20%-40% вовлекающих историй
 - «вписывание» прогрева в текущие истории
 """
-        price = '250$/ неделя'
-        image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
+    price = '250$/ неделя'
+    image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
-    class Monthly(BaseService):
-        type = 'simple'
-        name = 'Сценарист'
-        time = '10-15 дней'
-        description = """ВХОДИТ:
+class MonthlyScenaristInsta(BaseService):
+    type = 'simple'
+    name = 'Сценарист'
+    time = '10-15 дней'
+    description = """ВХОДИТ:
 
 - написание продающего сценария на месяц
 - 8-10 историй с ""прогревающим"" контентом, направленным на продажу продукта/ прогреву к вебинару/ марфону и тд/ 
@@ -695,26 +616,8 @@ class ScenaristInsta(BaseTariffs):
 - Смена триггеров в течении месяца при необходимости
 - Смена стратегии в течении месяца
 """
-        price = '900$/ месяц'
-        image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
-
-    tariffs = {
-        'one_time': {
-            'name': 'разово',
-            'service': OneTime
-        },
-        'weekly': {
-            'name': 'недельно',
-            'service': Weekly
-        },
-        'monthly': {
-            'name': 'месячно',
-            'service': Monthly
-        }
-    }
-
-    name = 'Сценарист'
-    type = 'tariff'
+    price = '900$/ месяц'
+    image = 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ'
 
 
 class RealsMaker(BaseService):
@@ -740,42 +643,6 @@ class RealsMaker(BaseService):
 
 от 10 до 20 - 30$/ шт"""
     image = 'AgACAgIAAxkBAAICo2RGa33028HL2n9LENUQuzVvCL9IAALlyTEbdbwxSnVv0hwseDjgAQADAgADeQADLwQ'
-
-
-# class RealsMaker(BaseTariffs):
-#     class PieceByPyPiece(BaseService):
-#         type = 'simple'
-#         name = 'Рилсмейкер - штучно'
-#         time = 'от 2ух дней'
-#         description = """ВХОДИТ:
-#
-# - напишем сценарий для рилсов
-# - подберем актуальную музыку
-# - распишем действия по кадрово
-# - сделаем монтаж ролика
-# - напишем описание
-# - Подберем индивидуальный стиль
-# - сделаем обложку в едином стиле для каждого ролика
-# - Регулярная генерация идей для роликов
-# - Создание Контент - плана
-# - Подберем хештеги
-# """
-#         price = """до 5 шт - 40$/ шт
-#
-# от 5 до 10 - 35$/ шт
-#
-# от 10 до 20 - 30$/ шт"""
-#         image = 'AgACAgIAAxkBAAICo2RGa33028HL2n9LENUQuzVvCL9IAALlyTEbdbwxSnVv0hwseDjgAQADAgADeQADLwQ'
-#
-#     tariffs = {
-#         'piece_b_p': {
-#             'name': 'штучно',
-#             'service': PieceByPyPiece
-#         }
-#     }
-#
-#     name = 'Рилсмейкер'
-#     type = 'tariff'
 
 
 class ConsultationWithAgencyOwner(BaseService):

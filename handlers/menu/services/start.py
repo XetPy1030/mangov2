@@ -5,16 +5,29 @@ from core import router
 from handlers.menu.services.markup import render_categories, render_services_from_category
 from info import lang
 from info import media
+from info.services import render
 from utils.filters.callback import CallbackFilter
 
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
 async def our_services(message: Message):
-    await message.answer_photo(
-        media.OUR_SERVICES_PICTURE,
-        caption=lang.menu.services.OUR_SERVICES,
-        reply_markup=render_categories()
-    )
+    text, markup, image = render('')
+    if image:
+        await message.answer_photo(
+            image,
+            caption=text,
+            reply_markup=markup
+        )
+    else:
+        await message.answer(
+            text,
+            reply_markup=markup
+        )
+    # await message.answer_photo(
+    #     media.OUR_SERVICES_PICTURE,
+    #     caption=lang.menu.services.OUR_SERVICES,
+    #     reply_markup=render_categories()
+    # )
 
 
 @router.callback_query(CallbackFilter('category'))
