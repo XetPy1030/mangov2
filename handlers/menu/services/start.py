@@ -41,7 +41,6 @@ def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
                     splitted_callback_data[-1].split('@')
                     ) > 1 else 0
                 data = ':'.join(saved) + ':' + splitted_callback_data[-1] + '@' + str(page_index)
-                print('han', splitted_callback_data, data, saved, page_index)
 
             j.callback_data = 'new_service:' + data
     return markup
@@ -56,6 +55,7 @@ async def our_services(message: Message):
 
 @router.callback_query(CallbackFilter('new_service'))
 async def new_service(call):
+    print(call.data)
     callback_data = call.data.removeprefix('new_service:')
 
     page_str = ':'.join([i.split('@')[0] for i in callback_data.split(':')])
