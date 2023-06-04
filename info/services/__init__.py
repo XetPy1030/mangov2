@@ -442,9 +442,11 @@ def render_folder(page, page_str_copy: str, page_index: int):
 
     # Navigation buttons
     if start_index > 0:
+        left = ':'.join(page_str_copy.split(':')[:-1]) if page_str_copy else ''
+        right = page_str_copy.split(':')[-1].split('@')[0] if page_str_copy else ''
         markup_keyboard.insert(0, [types.InlineKeyboardButton(
             text="<< Previous",
-            callback_data=f'{page_str_copy}@{page_index-1}'
+            callback_data=f'{left}:{right}@{page_index-1}'
         )])
 
     if end_index < len(children):
