@@ -43,11 +43,11 @@ async def our_services(message: Message):
 
 @router.callback_query(CallbackFilter('new_service'))
 async def new_service(call):
-    print(call.data)
     callback_data = call.data.removeprefix('new_service:')
     split_data = callback_data.split('@')
     page_str = split_data[0]
     page_index = int(split_data[1]) if len(split_data) > 1 else 0
+    print(call.data, page_str)
     text, markup, image = render(page_str, page_index=page_index, page_str_copy=callback_data)
     markup = handler_for_markup_for_service(markup)
     await answer(call.message, text, markup, image)
