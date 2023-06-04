@@ -453,6 +453,12 @@ def render_folder(page, page_str_copy: str, page_index: int):
             callback_data=f'{page_str_copy}@{page_index+1}'
         )])
 
+    if not page_str_copy:
+        markup_keyboard.append([types.InlineKeyboardButton(
+            text="Назад",
+            callback_data=':'.join(page_str_copy.split(':')[:-1])
+        )])
+
     markup = types.InlineKeyboardMarkup(inline_keyboard=markup_keyboard)
     markup.inline_keyboard = markup_keyboard
 
