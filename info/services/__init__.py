@@ -384,7 +384,7 @@ structure = {
 
 MAX_PER_PAGE = 5
 
-def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[str] = None, page_index: int = 0):
+def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[str] = None):
     if page is None:
         page = structure
     if page_str_copy is None:
@@ -395,7 +395,7 @@ def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[s
         page_list = page_list[1:]
 
     if not page_list:
-        return render_page(page, page_str_copy, page_index)
+        return render_page(page, page_str_copy)
 
     page_find = page_list[0]
 
@@ -408,31 +408,29 @@ def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[s
             page_children = page['children']
             if page_num < 0 or page_num >= len(page_children):
                 raise Exception('Ошибка страницы')
-            return render(':'.join(page_list[1:]), page_children[page_num], page_str_copy, page_index)
+            return render(':'.join(page_list[1:]), page_children[page_num], page_str_copy)
 
 
-def render_page(page, page_str_copy: str, page_index: int):
+def render_page(page, page_str_copy: str):
+    # return text, markup, image
     match page['type']:
         case 'service':
             return render_service(page, page_str_copy)
         case 'folder':
-            return render_folder(page, page_str_copy, page_index)
+            return render_folder(page, page_str_copy)
 
 
 def render_service(page, page_str_copy: str):
     ...
 
 
-def render_folder(page, page_str_copy: str, page_index: int):
+def render_folder(page, page_str_copy: str):
     text = page['name']
     image = page['image'] if 'image' in page else None
     markup_keyboard = []
     children = page['children']
-    start_index = page_index * MAX_PER_PAGE
-    end_index = start_index + MAX_PER_PAGE
-
-    for i, child in enumerate(children[start_index:end_index]):
-        callback_data = f'{page_str_copy}:{i+start_index}' if page_str_copy else f'{i+start_index}'
+    for i, child in enumerate(children):
+        callback_data = f'{page_str_copy}:{i}@{0}' if page_str_copy else f'{i}@{0}'
         markup_keyboard.append(
             [types.InlineKeyboardButton(
                 text=child['button'],
@@ -440,29 +438,19 @@ def render_folder(page, page_str_copy: str, page_index: int):
             )]
         )
 
-    # Navigation buttons
-    if start_index > 0:
-        markup_keyboard.insert(0, [types.InlineKeyboardButton(
-            text="<< Previous",
-            callback_data=f'{page_str_copy}@{page_index-1}'
-        )])
-
-    if end_index < len(children):
-        markup_keyboard.append([types.InlineKeyboardButton(
-            text="Next >>",
-            callback_data=f'{page_str_copy}@{page_index+1}'
-        )])
-
+    # Add a 'Back' button if this is not the root page
     if page_str_copy:
-        markup_keyboard.append([types.InlineKeyboardButton(
-            text="Назад",
-            callback_data=':'.join(page_str_copy.split(':')[:-1])
-        )])
+        markup_keyboard.append(
+            [types.InlineKeyboardButton(
+                text='Назад',
+                callback_data=f'go_back:{page_str_copy}'
+            )]
+        )
 
     markup = types.InlineKeyboardMarkup(inline_keyboard=markup_keyboard)
-    markup.inline_keyboard = markup_keyboard
 
     return text, markup, image
+
 
 
     # match child['type']:
