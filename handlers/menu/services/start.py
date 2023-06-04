@@ -24,47 +24,32 @@ async def answer(message, text, markup, image):
         )
 
 
-def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup, history: str):
+def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
     for i in markup.inline_keyboard:
         for j in i:
             split_data = j.callback_data.split('@')
             page_str = split_data[0]
             page_index = int(split_data[1]) if len(split_data) > 1 else 0
-            j.callback_data = 'new_service:' + history + ':' + page_str + '@' + str(page_index)
+            j.callback_data = 'new_service:' + page_str + '@' + str(page_index)
     return markup
+
 
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
 async def our_services(message: Message):
     text, markup, image = render('', page_index=0)
-    markup = handler_for_markup_for_service(markup, '')
+    markup = handler_for_markup_for_service(markup)
     await answer(message, text, markup, image)
+
 
 @router.callback_query(CallbackFilter('new_service'))
 async def new_service(call):
     callback_data = call.data.removeprefix('new_service:')
-    history, page_info = callback_data.rsplit(':', 1)
-    split_data = page_info.split('@')
+    split_data = callback_data.split('@')
     page_str = split_data[0]
     page_index = int(split_data[1]) if len(split_data) > 1 else 0
     text, markup, image = render(page_str, page_index=page_index)
-    markup = handler_for_markup_for_service(markup, callback_data)
+    markup = handler_for_markup_for_service(markup)
     await answer(call.message, text, markup, image)
-
-# Handler for the 'Back' button
-@router.callback_query(CallbackFilter('go_back'))
-async def go_back(call):
-    callback_data = call.data.removeprefix('go_back:')
-    if ':' in callback_data:
-        history, _ = callback_data.rsplit(':', 1)
-    else:
-        history = ''
-    split_data = history.rsplit(':', 1)[-1].split('@')
-    page_str = split_data[0]
-    page_index = int(split_data[1]) if len(split_data) > 1 else 0
-    text, markup, image = render(page_str, page_index=page_index)
-    markup = handler_for_markup_for_service(markup, history)
-    await answer(call.message, text, markup, image)
-
 
 
 

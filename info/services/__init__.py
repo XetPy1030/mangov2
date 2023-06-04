@@ -411,16 +411,28 @@ def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[s
             return render(':'.join(page_list[1:]), page_children[page_num], page_str_copy, page_index)
 
 
-def render_folder(page, page_str_copy: str, page_index: int = 0):
+def render_page(page, page_str_copy: str, page_index: int):
+    match page['type']:
+        case 'service':
+            return render_service(page, page_str_copy)
+        case 'folder':
+            return render_folder(page, page_str_copy, page_index)
+
+
+def render_service(page, page_str_copy: str):
+    ...
+
+
+def render_folder(page, page_str_copy: str, page_index: int):
     text = page['name']
     image = page['image'] if 'image' in page else None
     markup_keyboard = []
     children = page['children']
-    max_children = min(page_index + MAX_PER_PAGE, len(children))
+    start_index = page_index * MAX_PER_PAGE
+    end_index = start_index + MAX_PER_PAGE
 
-    for i in range(page_index, max_children):
-        child = children[i]
-        callback_data = f'{page_str_copy}:{i}@{page_index}' if page_str_copy else f'{i}@{page_index}'
+    for i, child in enumerate(children[start_index:end_index]):
+        callback_data = f'{page_str_copy}:{i+start_index}' if page_str_copy else f'{i+start_index}'
         markup_keyboard.append(
             [types.InlineKeyboardButton(
                 text=child['button'],
@@ -428,51 +440,29 @@ def render_folder(page, page_str_copy: str, page_index: int = 0):
             )]
         )
 
-    if page_index > 0:
-        # Add a 'Previous' button if not on the first page
-        markup_keyboard.append(
-            [types.InlineKeyboardButton(
-                text='Previous',
-                callback_data=f'{page_str_copy}:{page_index - MAX_PER_PAGE}@{page_index - MAX_PER_PAGE}'
-            )]
-        )
+    # Navigation buttons
+    if start_index > 0:
+        markup_keyboard.insert(0, [types.InlineKeyboardButton(
+            text="<< Previous",
+            callback_data=f'{page_str_copy}@{page_index-1}'
+        )])
 
-    if page_index + MAX_PER_PAGE < len(children):
-        # Add a 'Next' button if there are more pages
-        markup_keyboard.append(
-            [types.InlineKeyboardButton(
-                text='Next',
-                callback_data=f'{page_str_copy}:{page_index + MAX_PER_PAGE}@{page_index + MAX_PER_PAGE}'
-            )]
-        )
+    if end_index < len(children):
+        markup_keyboard.append([types.InlineKeyboardButton(
+            text="Next >>",
+            callback_data=f'{page_str_copy}@{page_index+1}'
+        )])
 
-    # Add a 'Back' button if this is not the root page
     if page_str_copy:
-        markup_keyboard.append(
-            [types.InlineKeyboardButton(
-                text='Назад',
-                callback_data=f'go_back:{page_str_copy}'
-            )]
-        )
+        markup_keyboard.append([types.InlineKeyboardButton(
+            text="Назад",
+            callback_data=':'.join(page_str_copy.split(':')[:-1])
+        )])
 
     markup = types.InlineKeyboardMarkup(inline_keyboard=markup_keyboard)
+    markup.inline_keyboard = markup_keyboard
 
     return text, markup, image
-
-
-
-def render_page(page, page_str_copy: str):
-    # return text, markup, image
-    match page['type']:
-        case 'service':
-            return render_service(page, page_str_copy)
-        case 'folder':
-            return render_folder(page, page_str_copy)
-
-
-def render_service(page, page_str_copy: str):
-    ...
-
 
 
     # match child['type']:
