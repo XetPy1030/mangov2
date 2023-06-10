@@ -1,0 +1,23 @@
+services:
+  bot:
+    container_name: mango-bot
+    build: .
+    environment:
+      REDIS_HOST: $REDIS_HOST
+    volumes:
+        - ./app:/app
+  postgres:
+    container_name: mango-postgres
+    image: postgres:15.3
+    environment:
+      POSTGRES_USER: $PG_USER
+      POSTGRES_PASSWORD: $PG_PASSWORD
+      POSTGRES_HOST: 0.0.0.0
+      POSTGRES_DB: $PG_DB
+    ports:
+      - $PG_PORT:5432
+  redis:
+    container_name: mango-redis
+    image: redis:7.2-rc2
+    ports:
+      - $REDIS_PORT:6379

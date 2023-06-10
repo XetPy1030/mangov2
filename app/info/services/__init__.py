@@ -381,8 +381,8 @@ structure = {
     ]
 }
 
-
 MAX_PER_PAGE = 5
+
 
 def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[str] = None, page_index: int = 0):
     if page is None:
@@ -420,7 +420,37 @@ def render_page(page, page_str_copy: str, page_index: int):
 
 
 def render_service(page, page_str_copy: str):
-    ...
+    def render_text(service):
+        is_description = hasattr(service, 'description')
+        is_price = hasattr(service, 'price')
+        is_time = hasattr(service, 'time')
+        is_bonus = hasattr(service, 'bonus')
+
+        text = f'<b>{service.name}</b>\n\n'
+        if is_description:
+            text += f'{service.description}\n\n'
+        if is_price:
+            text += f'Цена: {service.price}\n\n'
+        if is_time:
+            text += f'Время: {service.time}\n\n'
+        if is_bonus:
+            text += f'Бонус: {service.bonus}\n\n'
+
+        return text
+
+    service = services_dict[page['name']]
+
+    return render_text(service), None, service.image if hasattr(service, 'image') else None
+
+    # is_image = hasattr(service, 'image')
+    #
+    # text = render_text(service)
+    # markup = render_markup(service, category, call, category_page)
+    #
+    # if is_image:
+    #     await call.message.answer_photo(service.image, caption=text, reply_markup=markup)
+    # else:
+    #     await call.message.answer(text, reply_markup=markup)
 
 
 def render_folder(page, page_str_copy: str, page_index: int):
@@ -432,7 +462,7 @@ def render_folder(page, page_str_copy: str, page_index: int):
     end_index = start_index + MAX_PER_PAGE
 
     for i, child in enumerate(children[start_index:end_index]):
-        callback_data = f'{page_str_copy}:{i+start_index}' if page_str_copy else f'{i+start_index}'
+        callback_data = f'{page_str_copy}:{i + start_index}' if page_str_copy else f'{i + start_index}'
         markup_keyboard.append(
             [types.InlineKeyboardButton(
                 text=child['button'],
@@ -442,32 +472,62 @@ def render_folder(page, page_str_copy: str, page_index: int):
 
     # Navigation buttons
     if start_index > 0:
-        left = ':'.join(page_str_copy.split(':')[:-1]) if page_str_copy else ''
-        right = page_str_copy.split(':')[-1].split('@')[0] if page_str_copy else ''
-        markup_keyboard.insert(0, [types.InlineKeyboardButton(
-            text="<<",
-            callback_data=f'{left}:{right}@{page_index-1}'
-        )])
+        ls = page_str_copy.split(':')
+
+        markup_keyboard.insert(
+            0, [types.InlineKeyboardButton(
+                text="<<",
+                callback_data=f'{left}:{right}@{page_index - 1}'
+            )]
+        )
 
     if end_index < len(children):
-        left = ':'.join(page_str_copy.split(':')[:-1]) if page_str_copy else ''
-        right = page_str_copy.split(':')[-1].split('@')[0] if page_str_copy else ''
-        markup_keyboard.append([types.InlineKeyboardButton(
-            text=">>",
-            callback_data=f'{left}:{right}@{page_index+1}'
-        )])
+        ls = page_str_copy.split(':')
+        ls[-1] = f'{int(ls[-1].split("@")[0])}@{page_index + 1}'
+        markup_keyboard.append(
+            [types.InlineKeyboardButton(
+                text=">>",
+                callback_data=':'.join(ls)
+            )]
+        )
+
+    print(page_str_copy)
 
     if len(page_str_copy.split(':')) > 1:
-        markup_keyboard.append([types.InlineKeyboardButton(
-            text="Назад",
-            callback_data=':'.join(page_str_copy.split(':')[:-1])
-        )])
+        markup_keyboard.append(
+            [types.InlineKeyboardButton(
+                text="Назад",
+                callback_data=':'.join(page_str_copy.split(':')[:-1])
+            )]
+        )
 
     markup = types.InlineKeyboardMarkup(inline_keyboard=markup_keyboard)
     markup.inline_keyboard = markup_keyboard
 
+    markup = handler_for_markup_for_service(markup)
     return text, markup, image
 
+
+def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
+    for i in markup.inline_keyboard:
+        for j in i:
+            splitted_callback_data = j.callback_data.split(':')
+            if len(splitted_callback_data) == 1:
+                page_index = int(splitted_callback_data[0].split('@')[1]) if len(
+                    splitted_callback_data[0].split('@')
+                ) > 1 else 0
+                data = splitted_callback_data[0].split('@')[0] + '@' + str(page_index)
+            elif len(splitted_callback_data) == 0:
+                data = ''
+            else:
+                saved = splitted_callback_data[:-1]
+                page_index = int(splitted_callback_data[-1].split('@')[1]) if len(
+                    splitted_callback_data[-1].split('@')
+                ) > 1 else 0
+                data = ':'.join(saved) + ':' + splitted_callback_data[-1] + '@' + str(page_index)
+
+            j.callback_data = 'new_service:' + data
+    return markup
 
     # match child['type']:
     #     case 'service':

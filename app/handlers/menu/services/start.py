@@ -24,38 +24,14 @@ async def answer(message, text, markup, image):
         )
 
 
-def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
-    for i in markup.inline_keyboard:
-        for j in i:
-            splitted_callback_data = j.callback_data.split(':')
-            if len(splitted_callback_data) == 1:
-                page_index = int(splitted_callback_data[0].split('@')[1]) if len(
-                    splitted_callback_data[0].split('@')
-                    ) > 1 else 0
-                data = splitted_callback_data[0].split('@')[0] + '@' + str(page_index)
-            elif len(splitted_callback_data) == 0:
-                data = ''
-            else:
-                saved = splitted_callback_data[:-1]
-                page_index = int(splitted_callback_data[-1].split('@')[1]) if len(
-                    splitted_callback_data[-1].split('@')
-                    ) > 1 else 0
-                data = ':'.join(saved) + ':' + splitted_callback_data[-1] + '@' + str(page_index)
-
-            j.callback_data = 'new_service:' + data
-    return markup
-
-
 @router.message(Text(text=lang.menu.buttons.OUR_SERVICES))
 async def our_services(message: Message):
     text, markup, image = render('', page_index=0)
-    markup = handler_for_markup_for_service(markup)
     await answer(message, text, markup, image)
 
 
 @router.callback_query(CallbackFilter('new_service'))
 async def new_service(call):
-    print(call.data)
     callback_data = call.data.removeprefix('new_service:')
 
     page_str = ':'.join([i.split('@')[0] for i in callback_data.split(':')])
@@ -64,7 +40,7 @@ async def new_service(call):
     page_index = int(split_data[1]) if len(split_data) > 1 else 0
     page_str_copy = call.data.removeprefix('new_service:')
     text, markup, image = render(page_str, page_index=page_index, page_str_copy=page_str_copy)
-    markup = handler_for_markup_for_service(markup)
+    print([i[0].callback_data for i in markup.inline_keyboard])
     await answer(call.message, text, markup, image)
 
 

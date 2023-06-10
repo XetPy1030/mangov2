@@ -21,8 +21,8 @@ class SupportQuestions(StatesGroup):
 async def support(message, state):
     await message.answer_photo(
         media.SUPPORT_PICTURE,
-        caption=lang.menu.support.SUPPORT_CLIENT_START,
-        reply_markup=keyboards.cancel.cancel_keyboard
+        caption=app.info.lang.menu.support.SUPPORT_CLIENT_START,
+        reply_markup=app.keyboards.cancel.cancel_keyboard
     )
 
     await state.set_state(SupportQuestions.question)

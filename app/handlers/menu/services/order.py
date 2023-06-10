@@ -8,7 +8,6 @@ from info import lang
 
 @router.callback_query(CallbackFilter('order_service'))
 async def order_service_handler(call):
-    print(call.data)
     name_service = call.data.split(':')[1]
     service = None
     for service_iter in services:
