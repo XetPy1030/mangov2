@@ -389,6 +389,8 @@ def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[s
         page = structure
     if page_str_copy is None:
         page_str_copy = page_str
+    if len(page_str_copy) and page_str_copy[0] == "@":  # FUCK YOU IT IS BEST KOSTYL
+        page_str_copy = ""
 
     page_list = page_str.split(':')
     if page_list[0] == '':
@@ -473,11 +475,12 @@ def render_folder(page, page_str_copy: str, page_index: int):
     # Navigation buttons
     if start_index > 0:
         ls = page_str_copy.split(':')
+        ls[-1] = f'{int(ls[-1].split("@")[0])}@{page_index - 1}'
 
         markup_keyboard.insert(
             0, [types.InlineKeyboardButton(
                 text="<<",
-                callback_data=f'{left}:{right}@{page_index - 1}'
+                callback_data=':'.join(ls)
             )]
         )
 
@@ -493,7 +496,7 @@ def render_folder(page, page_str_copy: str, page_index: int):
 
     print(page_str_copy)
 
-    if len(page_str_copy.split(':')) > 1:
+    if "@" in page_str_copy:
         markup_keyboard.append(
             [types.InlineKeyboardButton(
                 text="Назад",
