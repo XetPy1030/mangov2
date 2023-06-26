@@ -1,15 +1,11 @@
 from aiogram.filters import Text
 from aiogram.types import Message
-from aiogram.types import ReplyKeyboardRemove
-
-from asyncio import sleep
 
 from core import router
-from info.lang.menu.buttons import ABOUT_US
 from database import User
+from info.lang.menu.about import ABOUT_1
+from info.lang.menu.buttons import ABOUT_US
 from info.media import ABOUT_SERVICE_PICTURE
-from info.lang.menu.about import ABOUT_1, ABOUT_2, ABOUT_3
-from keyboards.menu import get_menu_keyboard
 
 
 @router.message(Text(text=ABOUT_US))

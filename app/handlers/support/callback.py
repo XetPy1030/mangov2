@@ -3,7 +3,9 @@ from aiogram.filters import StateFilter, Text
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
+import config
 from core import router, bot
+from handlers.menu.services.markup import get_answer_keyboard, get_support_keyboard
 from info import lang
 import keyboards
 from keyboards.menu import get_menu_keyboard
@@ -12,6 +14,41 @@ from utils.filters.callback import CallbackFilter
 
 class SupportOtvet(StatesGroup):
     otvet = State()
+
+
+class SupportAdminOtvet(StatesGroup):
+    otvet = State()
+
+
+@router.callback_query(CallbackFilter('admin_answer'))
+async def support_answer(callback_query: types.CallbackQuery, state: FSMContext):
+    await callback_query.message.answer(
+        lang.menu.support.SUPPORT_ADMIN_ANSWER,
+        reply_markup=keyboards.cancel.cancel_keyboard
+    )
+
+    user_id = callback_query.data.split(':')[1]
+    await state.set_state(SupportAdminOtvet.otvet)
+    await state.update_data(user_id=user_id)
+
+
+@router.message(StateFilter(SupportAdminOtvet.otvet))
+async def support_question_2(message: types.Message, state: FSMContext):
+    data = await state.update_data(user_id1=message.from_user.id)
+    user_id = data.get('user_id')
+
+    await message.answer(lang.menu.support.SUPPORT_ADMIN_SENT_MESSAGE.format(
+        full_name=message.from_user.full_name,
+        username=message.from_user.username,
+    ), reply_markup=get_menu_keyboard(message.from_user.id))
+
+    await bot.send_message(
+        user_id,
+        lang.menu.support.SUPPORT_ADMIN_ANSWERED,
+        reply_markup=get_support_keyboard()
+    )
+
+    await message.copy_to(user_id)
 
 
 @router.callback_query(CallbackFilter('answer'))
@@ -40,7 +77,7 @@ async def support_question_2(message: types.Message, state: FSMContext):
     await message.answer(lang.menu.support.SUPPORT_ADMIN_SENT_MESSAGE.format(
         full_name=message.from_user.full_name,
         username=message.from_user.username,
-    ))
+    ), reply_markup=get_menu_keyboard(message.from_user.id))
 
     await bot.send_message(
         user_id,

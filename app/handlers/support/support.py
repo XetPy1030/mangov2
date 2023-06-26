@@ -1,8 +1,9 @@
 from aiogram import types
 
+import info
 from config import SUPPORT_CHANNEL
 from core import router, bot
-from handlers.support.markup import get_markup_answer
+from handlers.support.markup import get_markup_answer, get_admin_markup_answer
 from info import lang
 from info import media
 import keyboards
@@ -11,6 +12,7 @@ from aiogram.filters import StateFilter, Text
 from aiogram.fsm.state import State, StatesGroup
 
 from keyboards.menu import get_menu_keyboard
+from utils.filters.callback import CallbackFilter
 
 
 class SupportQuestions(StatesGroup):
@@ -21,11 +23,24 @@ class SupportQuestions(StatesGroup):
 async def support(message, state):
     await message.answer_photo(
         media.SUPPORT_PICTURE,
-        caption=app.info.lang.menu.support.SUPPORT_CLIENT_START,
-        reply_markup=app.keyboards.cancel.cancel_keyboard
+        caption=info.lang.menu.support.SUPPORT_CLIENT_START,
+        reply_markup=keyboards.cancel.cancel_keyboard
     )
 
     await state.set_state(SupportQuestions.question)
+
+
+@router.callback_query(CallbackFilter('support'))
+async def support_handler(call: types.CallbackQuery, state):
+    await call.message.answer(
+        """
+Пожалуйста, напишите свой вопрос в чат.
+        """,
+        reply_markup=keyboards.cancel.cancel_keyboard
+    )
+
+    await state.set_state(SupportQuestions.question)
+
 
 
 @router.message(Text(text=lang.cancel.TO_THE_MAIN_MENU, ignore_case=True))
@@ -47,7 +62,7 @@ async def support_question(message: types.Message, state):
             full_name=message.from_user.full_name,
             username=message.from_user.username,
         ),
-        reply_markup=get_markup_answer(message.from_user.id)
+        reply_markup=get_admin_markup_answer(message.from_user.id)
     )
     await message.copy_to(SUPPORT_CHANNEL)
 

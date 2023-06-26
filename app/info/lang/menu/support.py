@@ -18,7 +18,7 @@ SUPPORT_ADMIN_ANSWER = """
 """
 
 SUPPORT_ADMIN_ANSWERED = """
-👩‍💻 Ваш вопрос был обработан администратором.
+👩‍💻 Ваш вопрос был обработан.
 """
 
 SUPPORT_ADMIN_SENT_MESSAGE = """

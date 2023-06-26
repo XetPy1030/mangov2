@@ -40,7 +40,6 @@ async def new_service(call):
     page_index = int(split_data[1]) if len(split_data) > 1 else 0
     page_str_copy = call.data.removeprefix('new_service:')
     text, markup, image = render(page_str, page_index=page_index, page_str_copy=page_str_copy)
-    print([i[0].callback_data for i in markup.inline_keyboard])
     await answer(call.message, text, markup, image)
 
 

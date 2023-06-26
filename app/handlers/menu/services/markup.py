@@ -2,6 +2,7 @@ from typing import List
 
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+import config
 from info.services import services, PER_PAGE, services_with_categories, BaseService, BaseTariffs
 
 
@@ -205,3 +206,45 @@ def get_answer_keyboard(user_id: int):
     ]
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def get_support_keyboard():
+    keyboard = [
+        [
+            InlineKeyboardButton(text='Ответить', callback_data=f'support'),
+        ]
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+
+def get_order_answer_keyboard(user_id: int):
+    keyboard = [
+        [
+            InlineKeyboardButton(text='Ответить', callback_data=f'order_answer:{user_id}'),
+        ]
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def get_order_user_answer_keyboard(user_id: int):
+    keyboard = [
+        [
+            InlineKeyboardButton(text='Ответить', callback_data=f'order_answer:{config.REQUESTS_CHANNEL}:{user_id}'),
+        ]
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+def get_user_answer_keyboard(user_id: int):
+    keyboard = [
+        [
+            InlineKeyboardButton(text='Ответить', callback_data=f'user_answer:{user_id}'),
+        ]
+    ]
+
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+

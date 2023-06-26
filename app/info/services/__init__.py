@@ -1,6 +1,7 @@
 from typing import Optional
 
 from aiogram import types
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from .services import *
 
@@ -442,7 +443,17 @@ def render_service(page, page_str_copy: str):
 
     service = services_dict[page['name']]
 
-    return render_text(service), None, service.image if hasattr(service, 'image') else None
+    keyboard = [[InlineKeyboardButton(text='Заказать услугу', callback_data=f'order_service:{page["name"]}')]]
+    back_callback_data = ':'.join(page_str_copy.split(':')[0:-1])
+    button_back = InlineKeyboardButton(text='Назад', callback_data=f'{back_callback_data}')
+    handler_callback_data(button_back)
+    keyboard.append([
+        button_back
+    ])
+
+    markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+    return render_text(service), markup, service.image if hasattr(service, 'image') else None
 
     # is_image = hasattr(service, 'image')
     #
@@ -514,39 +525,26 @@ def render_folder(page, page_str_copy: str, page_index: int):
 def handler_for_markup_for_service(markup: types.InlineKeyboardMarkup):
     for i in markup.inline_keyboard:
         for j in i:
-            splitted_callback_data = j.callback_data.split(':')
-            if len(splitted_callback_data) == 1:
-                page_index = int(splitted_callback_data[0].split('@')[1]) if len(
-                    splitted_callback_data[0].split('@')
-                ) > 1 else 0
-                data = splitted_callback_data[0].split('@')[0] + '@' + str(page_index)
-            elif len(splitted_callback_data) == 0:
-                data = ''
-            else:
-                saved = splitted_callback_data[:-1]
-                page_index = int(splitted_callback_data[-1].split('@')[1]) if len(
-                    splitted_callback_data[-1].split('@')
-                ) > 1 else 0
-                data = ':'.join(saved) + ':' + splitted_callback_data[-1] + '@' + str(page_index)
-
-            j.callback_data = 'new_service:' + data
+            handler_callback_data(j)
     return markup
 
-    # match child['type']:
-    #     case 'service':
-    #         markup.append(
-    #             [types.InlineKeyboardButton(
-    #                 text=child['button'],
-    #                 callback_data=f'service:{page_str_copy}:{i}'
-    #             )]
-    #         )
-    #     case 'folder':
-    #         markup.append(
-    #             [types.InlineKeyboardButton(
-    #                 text=child['button'],
-    #                 callback_data=f'folder:{page_str_copy}:{i}'
-    #             )]
-    #         )
+
+def handler_callback_data(j):
+    splitted_callback_data = j.callback_data.split(':')
+    if len(splitted_callback_data) == 1:
+        page_index = int(splitted_callback_data[0].split('@')[1]) if len(
+            splitted_callback_data[0].split('@')
+        ) > 1 else 0
+        data = splitted_callback_data[0].split('@')[0] + '@' + str(page_index)
+    elif len(splitted_callback_data) == 0:
+        data = ''
+    else:
+        saved = splitted_callback_data[:-1]
+        page_index = int(splitted_callback_data[-1].split('@')[1]) if len(
+            splitted_callback_data[-1].split('@')
+        ) > 1 else 0
+        data = ':'.join(saved) + ':' + splitted_callback_data[-1] + '@' + str(page_index)
+    j.callback_data = 'new_service:' + data
 
 
 services_dict = {

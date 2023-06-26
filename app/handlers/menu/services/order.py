@@ -1,19 +1,21 @@
+from aiogram import types
+from aiogram.filters import StateFilter, Text
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+
+import keyboards
 from config import REQUESTS_CHANNEL
 from core import router, bot
-from handlers.menu.services.markup import get_answer_keyboard
+from handlers.menu.services.markup import get_user_answer_keyboard, get_answer_keyboard
+from info.services import services_dict
 from utils.filters.callback import CallbackFilter
-from info.services import services
 from info import lang
 
 
 @router.callback_query(CallbackFilter('order_service'))
 async def order_service_handler(call):
     name_service = call.data.split(':')[1]
-    service = None
-    for service_iter in services:
-        if service_iter.__class__.__name__ == name_service:
-            service = service_iter
-            break
+    service = services_dict.get(name_service)
 
     if not service:
         await call.answer('Service not found')
@@ -29,3 +31,5 @@ async def order_service_handler(call):
         user_id=call.from_user.id,
         username=call.from_user.username
     ), reply_markup=get_answer_keyboard(call.from_user.id))
+
+
