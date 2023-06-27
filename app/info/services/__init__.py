@@ -71,8 +71,7 @@ services_with_categories = {
 # services_with_categories = {}
 
 texts = {
-    'main_folder': """Добро пожаловать в Digital - агенство «BB$: Brain & Best solution»
-
+    'main_folder': """
 <I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>""",
     'choice_tariff': """Вы выбрали услугу <b>{button}</b>
 Выберете тариф из списка ниже 👇🏼""",
@@ -194,7 +193,7 @@ structure = {
                     'type': 'folder',
                     'button': '📄 Тильда',
                     'name': texts['choice_tariff'].format(button='Тильда'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAIGNmRmhPQW5GD79V0cE9lTWZxofiyhAAIbzTEbZ8k4S6KBQixzBHKoAQADAgADeQADLwQ',
                     'children': [
                         {
                             'type': 'service',
@@ -235,7 +234,7 @@ structure = {
                     'type': 'folder',
                     'button': '🎯 Таргет',
                     'name': texts['choice_tariff'].format(button='Таргет'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAICsmRLXzKgAAEkjIk2tVYSh6ZspzCZwwACJ8IxG_X-WUql2Drz7oQNfQEAAwIAA3kAAy8E',
                     'children': [
                         {
                             'type': 'service',
@@ -253,11 +252,11 @@ structure = {
                     'type': 'folder',
                     'button': '📝 Сторисмейкер',
                     'name': texts['choice_tariff'].format(button='Сторисмейкер'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAICW2RGTMN7cBGM1gs0cqSovHneBMEjAAKVxDEbRLo4SgWIjDaXz4oSAQADAgADeQADLwQ',
                     'children': [
                         {
                             'type': 'service',
-                            'button': '📝 сторис 1 день',
+                            'button': '📝 Cторис 1 день',
                             'name': 'daily_stories_insta',
                         },
                         {
@@ -276,7 +275,7 @@ structure = {
                     'type': 'folder',
                     'button': '📝 Контент-менеджер',
                     'name': texts['choice_tariff'].format(button='Контент-менеджер'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAICtmRLYtEIo0G5SsiO4ke6T7iQwVZLAAIywjEb9f5ZSqKJNsWPVmhBAQADAgADeQADLwQ',
                     'children': [
                         {
                             'type': 'service',
@@ -294,7 +293,7 @@ structure = {
                     'type': 'folder',
                     'button': '📝 Визуальный ассистент',
                     'name': texts['choice_tariff'].format(button='Визуальный ассистент'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAICWGRGTIfVAAGsNsK4RPPh9a7jvmW4xgAClMQxG0S6OErWG5pyOkgEpQEAAwIAA3kAAy8E',
                     'children': [
                         {
                             'type': 'service',
@@ -312,7 +311,7 @@ structure = {
                     'type': 'folder',
                     'button': '📝 Копирайтер',
                     'name': texts['choice_tariff'].format(button='Копирайтер'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAICVmRGTFoY2So9xJ_ZftWVFX6TbKoPAAKTxDEbRLo4SthS7JL2bx2AAQADAgADeQADLwQ',
                     'children': [
                         {
                             'type': 'service',
@@ -330,7 +329,7 @@ structure = {
                     'type': 'folder',
                     'button': '📝 Сценарист',
                     'name': texts['choice_tariff'].format(button='Сценарист'),
-                    'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
+                    'image': 'AgACAgIAAxkBAAICVGRGTCH4XuAlgIHlPPG9NvG76QMuAAKSxDEbRLo4SsPtCz7MjYstAQADAgADeQADLwQ',
                     'children': [
                         {
                             'type': 'service',
@@ -365,7 +364,6 @@ structure = {
             'type': 'folder',
             'button': '📝 Остальное',
             'name': texts['main_folder'],
-            'image': 'AgACAgIAAxkBAAICsGRLXoXQo-jjOjN40O7qE022qv8eAAIfwjEb9f5ZSpLVQtYKwtuWAQADAgADeQADLwQ',
             'children': [
                 {
                     'type': 'service',
@@ -382,7 +380,290 @@ structure = {
     ]
 }
 
-MAX_PER_PAGE = 5
+new_structure = {
+    'type': 'folder', 'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
+    'image': 'AgACAgIAAxkBAAICDmRGPmDSv_mYYWhIhuAVN4GTwFCSAAJAxDEbRLo4Smk_fM546IizAQADAgADeQADLwQ', 'children': [{
+        'type': 'folder',
+        'button': '📱 Телеграм',
+        'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
+        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'children': [
+            {
+                'type': 'service',
+                'button': '📦 Упаковка канала',
+                'name': 'channel_packaging'
+            },
+            {
+                'type': 'service',
+                'button': '📈 Продвижение канала блогером',
+                'name': 'channel_promotion_ad_blogers'
+            },
+            {
+                'type': 'service',
+                'button': '📈 Продвижение канала рекламой',
+                'name': 'channel_promotion_ad'
+            },
+            {
+                'type': 'service',
+                'button': '🖼 Логотип',
+                'name': 'logo'
+            },
+            {
+                'type': 'service',
+                'button': '🖼 Дизайн баннеров',
+                'name': 'design_banners'
+            },
+            {
+                'type': 'service',
+                'button': '🤖 Бот',
+                'name': 'bot'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Рекламный креатив',
+                'name': 'advertising_creative'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Контент для канала',
+                'name': 'content_channel'
+            },
+            {
+                'type': 'service',
+                'button': '👨\u200d💼 Администратор канала',
+                'name': 'channel_admin'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Сценарист на воронку(Упаковка ТГ канала)',
+                'name': 'screenwriter_on_funnel'
+            },
+            {
+                'type': 'service',
+                'button': '💰 Монетизация',
+                'name': 'monetization'
+            }]
+    }, {
+        'type': 'folder',
+        'button': '📹 Youtube',
+        'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
+        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'children': [
+            {
+                'type': 'service',
+                'button': '📈 Рекламный менеджер',
+                'name': 'advertising_manager'
+            },
+            {
+                'type': 'service',
+                'button': '🖼 Дизайнер',
+                'name': 'designer'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Контент для канала',
+                'name': 'content_developer'
+            },
+            {
+                'type': 'service',
+                'button': '📹 Монтажер. Создание видео',
+                'name': 'montager_creator_videos'
+            }]
+    }, {
+        'type': 'folder',
+        'button': '🌐 Веб',
+        'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
+        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'children': [
+            {
+                'type': 'service',
+                'button': '📝 UX/UI дизайн',
+                'name': 'ux_ui_design'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Разработка сайта',
+                'name': 'development_it_platforms'
+            },
+            {
+                'type': 'folder',
+                'button': '📄 Тильда',
+                'name': 'Вы выбрали услугу <b>Тильда</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMSZJsd2C74V0iSlD5_rwkkXeGSqzkAAhvNMRtnyThLHTD4n1BBOzcBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Разработка лендинга',
+                        'name': 'development_landings_tilda_group'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Разработка лендинга с интеграциями',
+                        'name': 'development_landing_with_integrations_tilda_group'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Разработка лендинга с функционалом',
+                        'name': 'plus_functional_on_tilda_codom_tilda_group'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Разработка интернет-магазина',
+                        'name': 'development_shop_on_tilda_tilda_group'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Разработка многостраничного сайта',
+                        'name': 'development_on_tilda_many_pages_tilda_group'
+                    }]
+            }]
+    }, {
+        'type': 'folder',
+        'button': '📸 Инстаграм',
+        'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
+        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'children': [
+            {
+                'type': 'folder',
+                'button': '🎯 Таргет',
+                'name': 'Вы выбрали услугу <b>Таргет</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Базовый таргет',
+                        'name': 'base_target_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Полный таргет',
+                        'name': 'full_target_insta'
+                    }]
+            },
+            {
+                'type': 'folder',
+                'button': '📝 Сторисмейкер',
+                'name': 'Вы выбрали услугу <b>Сторисмейкер</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Cторис 1 день',
+                        'name': 'daily_stories_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Недельный сторис',
+                        'name': 'weekly_stories_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Месячный сторис',
+                        'name': 'monthly_stories_insta'
+                    }]
+            },
+            {
+                'type': 'folder',
+                'button': '📝 Контент-менеджер',
+                'name': 'Вы выбрали услугу <b>Контент-менеджер</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Недельный контент-менеджер',
+                        'name': 'weekly_content_manager_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Месячный контент-менеджер',
+                        'name': 'monthly_content_manager_insta'
+                    }]
+            },
+            {
+                'type': 'folder',
+                'button': '📝 Визуальный ассистент',
+                'name': 'Вы выбрали услугу <b>Визуальный ассистент</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Визуальный ассистент поштучно',
+                        'name': 'piece_by_piece_visual_assistant_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Месячный визуальный ассистент',
+                        'name': 'monthly_visual_assistant_insta'
+                    }]
+            },
+            {
+                'type': 'folder',
+                'button': '📝 Копирайтер',
+                'name': 'Вы выбрали услугу <b>Копирайтер</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Редактирование текста',
+                        'name': 'editing_copy_writer_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Написание текста',
+                        'name': 'writing_copy_writer_insta'
+                    }]
+            },
+            {
+                'type': 'folder',
+                'button': '📝 Сценарист',
+                'name': 'Вы выбрали услугу <b>Сценарист</b>\nВыберете тариф из списка ниже 👇🏼',
+                'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+                'children': [
+                    {
+                        'type': 'service',
+                        'button': '📝 Одноразовый сценарист',
+                        'name': 'one_time_scenarist_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Недельный сценарист',
+                        'name': 'weekly_scenarist_insta'
+                    },
+                    {
+                        'type': 'service',
+                        'button': '📝 Месячный сценарист',
+                        'name': 'monthly_scenarist_insta'
+                    }]
+            },
+            {
+                'type': 'service',
+                'button': '📝 Контент-креатор',
+                'name': 'content_creator_insta'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Рилсмейкер',
+                'name': 'reals_maker_insta'
+            }]
+    }, {
+        'type': 'folder',
+        'button': '📝 Остальное',
+        'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
+        'children': [
+            {
+                'type': 'service',
+                'button': '📝 Консультация',
+                'name': 'consultation'
+            },
+            {
+                'type': 'service',
+                'button': '📝 Консультация с владельцем агентства',
+                'name': 'consultation_with_agency_owner'
+            }]
+    }]
+}
+
+MAX_PER_PAGE = 6
 
 
 def render(page_str: str, page: Optional[dict] = None, page_str_copy: Optional[str] = None, page_index: int = 0):
@@ -447,9 +728,11 @@ def render_service(page, page_str_copy: str):
     back_callback_data = ':'.join(page_str_copy.split(':')[0:-1])
     button_back = InlineKeyboardButton(text='Назад', callback_data=f'{back_callback_data}')
     handler_callback_data(button_back)
-    keyboard.append([
-        button_back
-    ])
+    keyboard.append(
+        [
+            button_back
+        ]
+    )
 
     markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
 
@@ -572,9 +855,9 @@ services_dict = {
     'development_on_tilda_many_pages_tilda_group': DevelopmentOnTildaManyPages(),
     'base_target_insta': BaseTargetInsta(),
     'full_target_insta': FullTargetInsta(),
-    'daily_stories_maker_insta': DailyStoriesMakerInsta(),
-    'weekly_stories_maker_insta': WeeklyStoriesMakerInsta(),
-    'monthly_stories_maker_insta': MonthlyStoriesMakerInsta(),
+    'daily_stories_insta': DailyStoriesMakerInsta(),
+    'weekly_stories_insta': WeeklyStoriesMakerInsta(),
+    'monthly_stories_insta': MonthlyStoriesMakerInsta(),
     'weekly_content_manager_insta': WeeklyContentManagerInsta(),
     'monthly_content_manager_insta': MonthlyContentManagerInsta(),
     'piece_by_piece_visual_assistant_insta': PieceByPieceVisualAssistantInsta(),
@@ -585,9 +868,54 @@ services_dict = {
     'weekly_scenarist_insta': WeeklyScenaristInsta(),
     'monthly_scenarist_insta': MonthlyScenaristInsta(),
     'content_creator_insta': ContentCreatorInsta(),
-    'reals_maker': RealsMaker(),
+    'reals_maker_insta': RealsMaker(),
     'consultation': Consultation(),
     'consultation_with_agency_owner': ConsultationWithAgencyOwner(),
 }
 
 PER_PAGE = 5
+
+
+"""
+ChannelPackaging 
+ChannelPromotionAdBlogers 
+ContentCreatorInsta 
+RealsMaker 
+WeeklyScenaristInsta 
+WritingCopyWriterInsta 
+MonthlyScenaristInsta 
+FullTargetInsta 
+EditingCopyWriterInsta 
+ChannelPromotionAd 
+DesignBanners 
+Logo 
+ContentChannel 
+Bot 
+Designer 
+Monetization 
+ScreenwriterOnFunnel 
+DailyStoriesMakerInsta 
+ContentDeveloper 
+AdvertisingManager 
+ChannelAdmin 
+AdvertisingCreative 
+DevelopmentLandings 
+DevelopmentOnTildaManyPages 
+MontagerCreatorVideos 
+DevelopmentITPlatforms 
+UXUIDesign 
+DevelopmentLandingWithIntegrations 
+DevelopmentShopOnTilda 
+PlusFunctionalOnTildaCodom 
+BaseTargetInsta 
+WeeklyStoriesMakerInsta 
+OneTimeScenaristInsta 
+MonthlyStoriesMakerInsta 
+MonthlyContentManagerInsta 
+PieceByPieceVisualAssistantInsta 
+WeeklyContentManagerInsta 
+MonthlyVisualAssistantInsta 
+ConsultationWithAgencyOwner 
+Consultation 
+
+"""
