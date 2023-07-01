@@ -21,4 +21,4 @@ ADMIN_KEYBOARD = [
     ]
 ]
 
-REVIEWS_LINK = 'https://t.me/mango_agency_feedback'
+REVIEWS_LINK = 'https://t.me/bbs_feedback'

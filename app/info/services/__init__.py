@@ -386,7 +386,7 @@ new_structure = {
         'type': 'folder',
         'button': '📱 Телеграм',
         'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
-        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'image': 'AgACAgIAAxkBAAPGZKCeIObMgGcqveze3hrvJoS972MAAg3UMRtC3gFJqeJVAv8RYMYBAAMCAAN5AAMvBA',
         'children': [
             {
                 'type': 'service',
@@ -447,7 +447,7 @@ new_structure = {
         'type': 'folder',
         'button': '📹 Youtube',
         'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
-        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'image': 'AgACAgIAAxkBAAPEZKCeDqepJ7cjgYlUmc14gFhi9I0AAgzUMRtC3gFJAc3W6XQrQ4cBAAMCAAN5AAMvBA',
         'children': [
             {
                 'type': 'service',
@@ -473,7 +473,7 @@ new_structure = {
         'type': 'folder',
         'button': '🌐 Веб',
         'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
-        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'image': 'AgACAgIAAxkBAAPCZKCd9l0iPiNxRZaRmkEYO-VWce4AAgrUMRtC3gFJGHJplHGqC7QBAAMCAAN5AAMvBA',
         'children': [
             {
                 'type': 'service',
@@ -521,7 +521,7 @@ new_structure = {
         'type': 'folder',
         'button': '📸 Инстаграм',
         'name': '\n<I>Выберете интересующий Вас раздел из списка ниже 👇🏼</I>',
-        'image': 'AgACAgIAAxkBAAMTZJsd2PIctun_TqkZyzzSRNdDx2QAAh_CMRv1_llKr5SJ6UNh8kYBAAMCAAN5AAMvBA',
+        'image': 'AgACAgIAAxkBAAPAZKCdF5IG66VDgM-s5xpwGvs_260AAgjUMRtC3gFJR2l_Xkarw6cBAAMCAAN5AAMvBA',
         'children': [
             {
                 'type': 'folder',
