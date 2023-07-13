@@ -80,7 +80,7 @@ texts = {
 structure = {
     'type': 'folder',
     'name': texts['main_folder'],
-    'image': 'AgACAgIAAxkBAAICDmRGPmDSv_mYYWhIhuAVN4GTwFCSAAJAxDEbRLo4Smk_fM546IizAQADAgADeQADLwQ',
+    'image': 'AgACAgIAAxkBAAICTmSwPI55CLRWR4BkBNjfZ03_2A3wAAIG1jEbcWCJSRGKIitYB7DWAQADAgADeQADLwQ',
     'children': [
         {
             'type': 'folder',
